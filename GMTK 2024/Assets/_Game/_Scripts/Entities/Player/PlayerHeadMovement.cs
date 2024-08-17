@@ -14,10 +14,10 @@ public class PlayerHeadMovement : MonoBehaviour
     [Header("Referências:")]
     [SerializeField] private GameObject playerButt;
     [SerializeField] private GameObject playerMiddlePrefab;
+    [SerializeField] private LineRenderer line;
 
     // Componentes:
     private Rigidbody2D _rb;
-    private LineRenderer _line;
 
     // Inputs:
     private Vector2 _moveInput;
@@ -35,7 +35,6 @@ public class PlayerHeadMovement : MonoBehaviour
         ResetLineMiddlePoints();
 
         _rb = GetComponent<Rigidbody2D>();
-        _line = GetComponent<LineRenderer>();
     }
 
     private void Update()
@@ -112,19 +111,19 @@ public class PlayerHeadMovement : MonoBehaviour
 
     private void UpdateLinePoints() 
     {
-        for (int i = 0; i < _line.positionCount; i++)
+        for (int i = 0; i < line.positionCount; i++)
         {
             if (i == 0)
             {
-                _line.SetPosition(i, gameObject.transform.position);
+                line.SetPosition(i, gameObject.transform.position);
             }
-            else if (i == _line.positionCount - 1)
+            else if (i == line.positionCount - 1)
             {
-                _line.SetPosition(i, playerButt.transform.position);
+                line.SetPosition(i, playerButt.transform.position);
             }
             else
             {
-                _line.SetPosition(i, _linePoints[i]);
+                line.SetPosition(i, _linePoints[i]);
             }
         }
     }
