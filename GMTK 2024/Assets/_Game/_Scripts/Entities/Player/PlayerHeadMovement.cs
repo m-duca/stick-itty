@@ -6,8 +6,9 @@ public class PlayerHeadMovement : MonoBehaviour
 {
     #region Variáveis
     [Header("Configurações:")]
-    [SerializeField] private float stepsDistance;
+    [SerializeField] private float moveForce;
     [SerializeField] private float maxDistance;
+    [SerializeField] private float resetCanMoveInterval;
 
     [Header("Referências:")]
     [SerializeField] private GameObject playerButt;
@@ -19,6 +20,7 @@ public class PlayerHeadMovement : MonoBehaviour
     // Inputs:
     private Vector2 _moveInput;
     private Vector2 _lastMoveInput;
+    private bool _canMove = true;
     #endregion
 
     #region Funções Unity
@@ -39,7 +41,7 @@ public class PlayerHeadMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (_moveInput != Vector2.zero) 
+        if (_moveInput != Vector2.zero && _canMove) 
             ApplyMove();
     }
     #endregion
@@ -60,14 +62,20 @@ public class PlayerHeadMovement : MonoBehaviour
 
     private void ApplyMove() 
     {
-        transform.position += (Vector3) _moveInput * stepsDistance;
-        _lastMoveInput = _moveInput;
+        _rb.AddForce((Vector3) _moveInput * moveForce, ForceMode2D.Impulse);
     }
 
     private void HasReachMaxDistance() 
     {
-        if (Vector3.Distance(gameObject.transform.position, playerButt.transform.position) >= maxDistance)
+        if (Vector3.Distance(gameObject.transform.position, playerButt.transform.position) >= maxDistance) 
+        {
+            _rb.velocity = Vector2.zero;
             gameObject.transform.position = playerButt.transform.position + Vector3.up * 1f;
+            _canMove = false;
+            Invoke("ResetCanMove", resetCanMoveInterval);
+        }
     }
+
+    private void ResetCanMove() => _canMove = true;
     #endregion
 }
