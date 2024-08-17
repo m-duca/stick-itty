@@ -13,7 +13,7 @@ public class PlayerHeadMovement : MonoBehaviour
 
     [Header("Referências:")]
     [SerializeField] private GameObject playerButt;
-    [SerializeField] private string currentScene;
+    [SerializeField] private GameObject playerMiddlePrefab;
 
     // Componentes:
     private Rigidbody2D _rb;
@@ -23,19 +23,25 @@ public class PlayerHeadMovement : MonoBehaviour
     private Vector2 _moveInput;
     private Vector2 _lastMoveInput;
     private bool _canMove = true;
+
+    private Vector3[] _linePoints = new Vector3[5];
+
+    private int _lastTargetDistance = 0;
     #endregion
 
     #region Funções Unity
     private void Start()
     {
+        ResetLineMiddlePoints();
+
         _rb = GetComponent<Rigidbody2D>();
         _line = GetComponent<LineRenderer>();
     }
 
     private void Update()
     {
-        _line.SetPosition(0, gameObject.transform.position);
-        _line.SetPosition(1, playerButt.transform.position);
+        UpdateLinePoints();
+
         GetMoveInput();
 
         HasReachMaxDistance();
@@ -47,17 +53,34 @@ public class PlayerHeadMovement : MonoBehaviour
             ApplyMove();
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Knot")) 
+        {
+            var knot = Instantiate(playerMiddlePrefab, collision.gameObject.transform.position, Quaternion.identity);
+            
+            for (int i = 0; i < _linePoints.Length; i++) 
+            {
+                if (i != 0 && i != 4) 
+                {
+                    if (i != _lastTargetDistance)
+                    {
+                        _linePoints[i] = knot.transform.position;
+                        _lastTargetDistance = i;
+                        break;
+                    }
+                }
+            }
+        }
+    }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.layer == 6)
-        {
             Die();
-        }
 
         if (collision.gameObject.layer == 7)
-        {
             ResetStretch();
-        }
     }
     #endregion
 
@@ -75,35 +98,64 @@ public class PlayerHeadMovement : MonoBehaviour
             _moveInput = new Vector2(0, 0);
     }
 
-    private void ApplyMove() 
-    {
-        _rb.AddForce((Vector3) _moveInput * moveForce, ForceMode2D.Impulse);
-    }
+    private void ApplyMove() => _rb.AddForce((Vector3) _moveInput * moveForce, ForceMode2D.Impulse);
 
     private void HasReachMaxDistance() 
     {
-        if (Vector3.Distance(gameObject.transform.position, playerButt.transform.position) >= maxDistance) 
+        if (Vector3.Distance(gameObject.transform.position, _linePoints[_lastTargetDistance]) >= maxDistance) 
         {
-            _rb.velocity = Vector2.zero;
-            gameObject.transform.position = playerButt.transform.position + Vector3.up * 1f;
-            _canMove = false;
-            Invoke("ResetCanMove", resetCanMoveInterval);
+            ResetStretch();
         }
     }
 
     private void ResetCanMove() => _canMove = true;
-    
-    private void Die()
+
+    private void UpdateLinePoints() 
     {
-        SceneManager.LoadScene(currentScene);
+        for (int i = 0; i < _line.positionCount; i++)
+        {
+            if (i == 0)
+            {
+                _line.SetPosition(i, gameObject.transform.position);
+            }
+            else if (i == _line.positionCount - 1)
+            {
+                _line.SetPosition(i, playerButt.transform.position);
+            }
+            else
+            {
+                _line.SetPosition(i, _linePoints[i]);
+            }
+        }
     }
+
+    private void ResetLineMiddlePoints() 
+    {
+        for (int i = 0; i < _linePoints.Length; i++)
+        {
+            if (i != 0 && i != 4)
+                _linePoints[i] = gameObject.transform.position;
+        }
+
+        _lastTargetDistance = 4;
+    }
+
+    private void Die() => SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 
     private void ResetStretch()
     {
         _rb.velocity = Vector2.zero;
         gameObject.transform.position = playerButt.transform.position + Vector3.up * 1f;
+
+        ResetLineMiddlePoints();
+
         _canMove = false;
         Invoke("ResetCanMove", resetCanMoveInterval);
+
+        var playerMiddlePoints = GameObject.FindGameObjectsWithTag("Player Middle");
+
+        foreach (GameObject point in playerMiddlePoints)
+            Destroy(point);
     }
     #endregion
 }
