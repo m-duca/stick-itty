@@ -6,40 +6,41 @@ public class PlayerHeadMovement : MonoBehaviour
 {
     #region Variáveis
     [Header("Configurações:")]
-    [SerializeField, Range(0f, 10f)] private float stepsDistance;
+    [SerializeField] private float stepsDistance;
+    [SerializeField] private float maxDistance;
 
     [Header("Referências:")]
-    [SerializeField] private GameObject playerMiddlePrefab;
+    [SerializeField] private GameObject playerButt;
 
     // Componentes:
     private Rigidbody2D _rb;
+    private LineRenderer _line;
 
     // Inputs:
     private Vector2 _moveInput;
-
-    private bool _canMove = true;
-
-    private bool _canAdd = true;
+    private Vector2 _lastMoveInput;
     #endregion
 
     #region Funções Unity
     private void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
+        _line = GetComponent<LineRenderer>();
     }
 
     private void Update()
     {
+        _line.SetPosition(0, gameObject.transform.position);
+        _line.SetPosition(1, playerButt.transform.position);
         GetMoveInput();
+
+        HasReachMaxDistance();
     }
 
     private void FixedUpdate()
     {
-        if (_moveInput != Vector2.zero && _canMove) 
-        {
+        if (_moveInput != Vector2.zero) 
             ApplyMove();
-            AddMiddle();
-        }
     }
     #endregion
 
@@ -60,12 +61,13 @@ public class PlayerHeadMovement : MonoBehaviour
     private void ApplyMove() 
     {
         transform.position += (Vector3) _moveInput * stepsDistance;
+        _lastMoveInput = _moveInput;
     }
 
-    private void AddMiddle()
+    private void HasReachMaxDistance() 
     {
-        var pos = (Vector2) transform.position - _moveInput * stepsDistance;
-        Instantiate(playerMiddlePrefab, (Vector3) pos, Quaternion.identity);
+        if (Vector3.Distance(gameObject.transform.position, playerButt.transform.position) >= maxDistance)
+            gameObject.transform.position = playerButt.transform.position + Vector3.up * 1f;
     }
     #endregion
 }
