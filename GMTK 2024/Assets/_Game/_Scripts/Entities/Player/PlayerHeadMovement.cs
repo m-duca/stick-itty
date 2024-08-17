@@ -53,6 +53,11 @@ public class PlayerHeadMovement : MonoBehaviour
         {
             Die();
         }
+
+        if (collision.gameObject.layer == 7)
+        {
+            ResetStretch();
+        }
     }
     #endregion
 
@@ -91,6 +96,14 @@ public class PlayerHeadMovement : MonoBehaviour
     private void Die()
     {
         SceneManager.LoadScene(currentScene);
+    }
+
+    private void ResetStretch()
+    {
+        _rb.velocity = Vector2.zero;
+        gameObject.transform.position = playerButt.transform.position + Vector3.up * 1f;
+        _canMove = false;
+        Invoke("ResetCanMove", resetCanMoveInterval);
     }
     #endregion
 }
