@@ -13,6 +13,7 @@ public class PlayerHeadMovement : MonoBehaviour
 
     [Header("Referências:")]
     [SerializeField] private GameObject playerButt;
+    [SerializeField] private string currentScene;
 
     // Componentes:
     private Rigidbody2D _rb;
@@ -89,7 +90,7 @@ public class PlayerHeadMovement : MonoBehaviour
     
     private void Die()
     {
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene(currentScene);
     }
     #endregion
 }
