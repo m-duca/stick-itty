@@ -57,29 +57,30 @@ public class PlayerHeadMovement : MonoBehaviour
         if (collision.gameObject.CompareTag("Knot")) 
         {
             var knot = Instantiate(playerMiddlePrefab, collision.gameObject.transform.position, Quaternion.identity);
-            
-            for (int i = 0; i < _linePoints.Length; i++) 
-            {
-                if (i != 0 && i != 4) 
-                {
-                    if (i != _lastTargetDistance)
-                    {
-                        _linePoints[i] = knot.transform.position;
-                        _lastTargetDistance = i;
-                        break;
-                    }
-                }
-            }
+
+            SetNewDistance(knot);
+        }
+        else if (collision.gameObject.CompareTag("NewBase")) 
+        {
+            SetButtPos(collision.gameObject.transform.position);
+            Destroy(collision.gameObject);
         }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.layer == 6)
-            Die();
+        switch (collision.gameObject.layer) 
+        {
+            // Espinho
+            case 6:
+                Die();
+                break;
 
-        if (collision.gameObject.layer == 7)
-            ResetStretch();
+            // Parede
+            case 7:
+                ResetStretch();
+                break;
+        }
     }
     #endregion
 
@@ -102,9 +103,7 @@ public class PlayerHeadMovement : MonoBehaviour
     private void HasReachMaxDistance() 
     {
         if (Vector3.Distance(gameObject.transform.position, _linePoints[_lastTargetDistance]) >= maxDistance) 
-        {
             ResetStretch();
-        }
     }
 
     private void ResetCanMove() => _canMove = true;
@@ -155,6 +154,28 @@ public class PlayerHeadMovement : MonoBehaviour
 
         foreach (GameObject point in playerMiddlePoints)
             Destroy(point);
+    }
+
+    private void SetNewDistance(GameObject knot) 
+    {
+        for (int i = 0; i < _linePoints.Length; i++)
+        {
+            if (i != 0 && i != 4)
+            {
+                if (i != _lastTargetDistance)
+                {
+                    _linePoints[i] = knot.transform.position;
+                    _lastTargetDistance = i;
+                    break;
+                }
+            }
+        }
+    }
+
+    private void SetButtPos(Vector3 basePos) 
+    {
+        playerButt.transform.position = basePos;
+        ResetStretch();
     }
     #endregion
 }
