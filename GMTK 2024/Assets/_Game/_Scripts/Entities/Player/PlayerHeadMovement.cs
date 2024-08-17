@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class PlayerHeadMovement : MonoBehaviour
 {
@@ -45,14 +44,6 @@ public class PlayerHeadMovement : MonoBehaviour
         if (_moveInput != Vector2.zero && _canMove) 
             ApplyMove();
     }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.layer == 6)
-        {
-            Die();
-        }
-    }
     #endregion
 
     #region Funções Próprias
@@ -86,10 +77,5 @@ public class PlayerHeadMovement : MonoBehaviour
     }
 
     private void ResetCanMove() => _canMove = true;
-    
-    private void Die()
-    {
-        SceneManager.LoadScene("SampleScene");
-    }
     #endregion
 }
