@@ -18,6 +18,7 @@ public class PlayerHeadMovement : MonoBehaviour
 
     // Componentes:
     private Rigidbody2D _rb;
+    private ValveScript _valveScript;
 
     // Inputs:
     private Vector2 _moveInput;
@@ -79,6 +80,12 @@ public class PlayerHeadMovement : MonoBehaviour
             // Parede
             case 7:
                 ResetStretch();
+                break;
+
+            //Valvula
+            case 8:
+                _valveScript = collision.gameObject.GetComponent<ValveScript>();
+                OpenGate();
                 break;
         }
     }
@@ -154,6 +161,11 @@ public class PlayerHeadMovement : MonoBehaviour
 
         foreach (GameObject point in playerMiddlePoints)
             Destroy(point);
+    }
+
+    private void OpenGate()
+    {
+        _valveScript.connectedGate.SetActive(false);
     }
 
     private void SetNewDistance(GameObject knot) 
