@@ -63,7 +63,7 @@ public class PlayerHeadMovement : MonoBehaviour
         else if (collision.gameObject.CompareTag("NewBase")) 
         {
             SetButtPos(collision.gameObject.transform.position);
-            Destroy(collision.gameObject);
+            //Destroy(collision.gameObject);
         }
     }
 
