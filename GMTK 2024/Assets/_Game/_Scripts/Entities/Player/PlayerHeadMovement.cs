@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Net;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -54,6 +55,8 @@ public class PlayerHeadMovement : MonoBehaviour
     {
         if (_moveInput != Vector2.zero && _canMove) 
             ApplyMove();
+
+        LineCollision();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -133,15 +136,19 @@ public class PlayerHeadMovement : MonoBehaviour
         {
             if (i == 0)
             {
-                line.SetPosition(i, gameObject.transform.position);
+                var buttPos = playerButt.transform.position;
+                line.SetPosition(i, new Vector3(buttPos.x, buttPos.y, 0f));
+                _linePoints[i] = buttPos;
             }
             else if (i == line.positionCount - 1)
             {
-                line.SetPosition(i, playerButt.transform.position);
+                var headPos = gameObject.transform.position;
+                line.SetPosition(i, new Vector3(headPos.x, headPos.y, 0f));
+                _linePoints[i] = headPos;
             }
             else
             {
-                line.SetPosition(i, _linePoints[i]);
+                line.SetPosition(i, new Vector3(_linePoints[i].x, _linePoints[i].y, 0f));
             }
         }
     }
@@ -159,10 +166,9 @@ public class PlayerHeadMovement : MonoBehaviour
 
     private void Die() => ResetStretch();
 
-    private void ResetStretch(bool applyShake=true)
+    private void ResetStretch()
     {
-        if (applyShake)
-            screenShakeScript.ApplyScreenShake();
+        screenShakeScript.ApplyScreenShake();
 
         _rb.velocity = Vector2.zero;
         gameObject.transform.position = playerButt.transform.position + Vector3.up * 1f;
@@ -202,9 +208,34 @@ public class PlayerHeadMovement : MonoBehaviour
     private void SetButtPos(Vector3 basePos) 
     {
         playerButt.transform.position = basePos;
-        ResetStretch(false);
+        ResetStretch();
     }
 
     private void ResetChangedPos() => _changedPos = false;
+
+    private void LineCollision() 
+    {
+        for (int i = 0; i < _linePoints.Length; i++) 
+        {
+            if (i < _linePoints.Length - 1) 
+            {
+                var startPos = _linePoints[i];
+                var endPos = _linePoints[i + 1];
+                var dir = endPos - startPos;
+
+                Ray ray = new Ray(startPos, dir);
+                RaycastHit hit;
+
+                if (Physics.Raycast(ray, out hit, dir.magnitude))
+                {
+                    //Debug.Log("Raycast hit: " + hit.collider.name);
+                }
+                else 
+                {
+                    //Debug.Log("Não foi!");
+                }
+            }
+        }
+    }
     #endregion
 }
