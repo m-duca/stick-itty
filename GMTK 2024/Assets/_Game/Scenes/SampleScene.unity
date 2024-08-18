@@ -1328,6 +1328,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1689450168887534351, guid: e641da0c51560104595a2b7ab3b91b7e, type: 3}
+      propertyPath: m_LinearDrag
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1689450168887534351, guid: e641da0c51560104595a2b7ab3b91b7e, type: 3}
+      propertyPath: m_AngularDrag
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1689450168887534351, guid: e641da0c51560104595a2b7ab3b91b7e, type: 3}
+      propertyPath: m_GravityScale
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 3785498885624487748, guid: e641da0c51560104595a2b7ab3b91b7e, type: 3}
       propertyPath: m_Name
       value: Player
