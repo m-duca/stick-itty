@@ -16,7 +16,7 @@ TagManager:
   - 
   - Water
   - UI
-  - SpikeLayer
+  - BulletLayer
   - WallLayer
   - ValveLayer
   - 
@@ -25,14 +25,14 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - PlayButtonLayer
+  - QuitButtonLayer
+  - BackButtonLayer
+  - Stage1Layer
+  - Stage2Layer
+  - Stage3Layer
+  - Stage4Layer
+  - Stage5Layer
   - 
   - 
   - 

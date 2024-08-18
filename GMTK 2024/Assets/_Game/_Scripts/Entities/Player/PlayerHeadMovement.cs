@@ -21,6 +21,7 @@ public class PlayerHeadMovement : MonoBehaviour
     // Componentes:
     private Rigidbody2D _rb;
     private ValveScript _valveScript;
+    private MenuManager _menuManager;
 
     // Inputs:
     private Vector2 _moveInput;
@@ -40,6 +41,7 @@ public class PlayerHeadMovement : MonoBehaviour
         ResetLineMiddlePoints();
 
         _rb = GetComponent<Rigidbody2D>();
+        _menuManager = FindObjectOfType<MenuManager>();
     }
 
     private void Update()
@@ -87,20 +89,86 @@ public class PlayerHeadMovement : MonoBehaviour
     {
         switch (collision.gameObject.layer) 
         {
-            // Espinho
+            // Bala
             case 6:
-                Die();
+                ResetStretch();
                 break;
 
-            // Parede
+            // Espinho
             case 7:
                 ResetStretch();
                 break;
 
-            //Valvula
+            // Valvula
             case 8:
                 _valveScript = collision.gameObject.GetComponent<ValveScript>();
                 OpenGate();
+                break;
+
+            // SelecionarFases
+            case 15:
+                if (_menuManager != null)
+                {
+                    ResetStretch();
+                    _menuManager.OpenStageSelection();
+                }
+                break;
+
+            // Sair
+            case 16:
+                if (_menuManager != null)
+                {
+                    ResetStretch();
+                    _menuManager.QuitGame();
+                }
+                break;
+
+            // Voltar
+            case 17:
+                if (_menuManager != null)
+                {
+                    _menuManager.ReturnToMenu();
+                }
+                break;
+
+            // Fase1
+            case 18:
+                if (_menuManager != null)
+                {
+                    
+                }
+                break;
+
+            // Fase2
+            case 19:
+                if (_menuManager != null)
+                {
+                    
+                }
+                break;
+
+            // Fase3
+            case 20:
+                if (_menuManager != null)
+                {
+                    
+                }
+                break;
+
+            // Fase4
+            case 21:
+                if (_menuManager != null)
+                {
+                    
+                }
+                break;
+
+            // Fase5
+            case 22:
+                if (_menuManager != null)
+                {
+                    
+                }
                 break;
         }
     }
@@ -164,8 +232,6 @@ public class PlayerHeadMovement : MonoBehaviour
         _lastTargetDistance = 4;
     }
 
-    private void Die() => ResetStretch();
-
     private void ResetStretch()
     {
         screenShakeScript.ApplyScreenShake();
@@ -188,7 +254,7 @@ public class PlayerHeadMovement : MonoBehaviour
     {
         _valveScript.connectedGate.SetActive(false);
     }
-
+    
     private void SetNewDistance(GameObject knot) 
     {
         for (int i = 0; i < _linePoints.Length; i++)
