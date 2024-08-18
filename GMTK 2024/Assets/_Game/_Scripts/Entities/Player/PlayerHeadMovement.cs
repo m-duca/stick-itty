@@ -157,7 +157,7 @@ public class PlayerHeadMovement : MonoBehaviour
         _lastTargetDistance = 4;
     }
 
-    private void Die() => SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    private void Die() => ResetStretch();
 
     private void ResetStretch(bool applyShake=true)
     {
