@@ -12,6 +12,7 @@ public class PlayerHeadMovement : MonoBehaviour
     [SerializeField] private float resetCanMoveInterval;
 
     [Header("Referências:")]
+    [SerializeField] private ScreenShake screenShakeScript;
     [SerializeField] private GameObject playerButt;
     [SerializeField] private GameObject playerMiddlePrefab;
     [SerializeField] private LineRenderer line;
@@ -28,6 +29,8 @@ public class PlayerHeadMovement : MonoBehaviour
     private Vector3[] _linePoints = new Vector3[5];
 
     private int _lastTargetDistance = 0;
+
+    private bool _changedPos = false;
     #endregion
 
     #region Funções Unity
@@ -61,10 +64,19 @@ public class PlayerHeadMovement : MonoBehaviour
 
             SetNewDistance(knot);
         }
-        else if (collision.gameObject.CompareTag("NewBase")) 
+        else if (collision.gameObject.CompareTag("NewBase") && !_changedPos) 
         {
             SetButtPos(collision.gameObject.transform.position);
+            _changedPos = true;
             //Destroy(collision.gameObject);
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("NewBase"))
+        {
+            Invoke("ResetChangedPos", 1f);
         }
     }
 
@@ -147,8 +159,11 @@ public class PlayerHeadMovement : MonoBehaviour
 
     private void Die() => SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 
-    private void ResetStretch()
+    private void ResetStretch(bool applyShake=true)
     {
+        if (applyShake)
+            screenShakeScript.ApplyScreenShake();
+
         _rb.velocity = Vector2.zero;
         gameObject.transform.position = playerButt.transform.position + Vector3.up * 1f;
 
@@ -187,7 +202,9 @@ public class PlayerHeadMovement : MonoBehaviour
     private void SetButtPos(Vector3 basePos) 
     {
         playerButt.transform.position = basePos;
-        ResetStretch();
+        ResetStretch(false);
     }
+
+    private void ResetChangedPos() => _changedPos = false;
     #endregion
 }
