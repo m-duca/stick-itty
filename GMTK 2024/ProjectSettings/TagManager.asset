@@ -13,13 +13,13 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Bullet Spawner
+  - BulletSpawnerLayer
   - Water
   - UI
   - BulletLayer
   - WallLayer
   - ValveLayer
-  - Bullet
+  - 
   - 
   - 
   - 
