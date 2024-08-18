@@ -216,7 +216,7 @@ public class PlayerHeadMovement : MonoBehaviour
             }
             else
             {
-                line.SetPosition(i, new Vector3(_linePoints[i].x, _linePoints[i].y, 0f));
+                line.SetPosition(i, new Vector3(_linePoints[_lastTargetDistance].x, _linePoints[_lastTargetDistance].y, 0f));
             }
         }
     }
@@ -226,7 +226,7 @@ public class PlayerHeadMovement : MonoBehaviour
         for (int i = 0; i < _linePoints.Length; i++)
         {
             if (i != 0 && i != 4)
-                _linePoints[i] = gameObject.transform.position;
+                _linePoints[i] = playerButt.transform.position;
         }
 
         _lastTargetDistance = 4;
