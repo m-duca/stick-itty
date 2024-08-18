@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class ScreenShake : MonoBehaviour
 {
+    #region Variáveis
     [Header("Screen Shake Settings:")]
-    [SerializeField]
-    private float animationSpeed;
+    [SerializeField] private float animationSpeed;
 
     private Animator camAnim;
+    #endregion
+
 
     #region Funções Unity
     private void Awake()

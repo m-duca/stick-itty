@@ -322,7 +322,7 @@ GameObject:
   - component: {fileID: 624066463}
   - component: {fileID: 624066462}
   - component: {fileID: 624066465}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Bullet Spawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -434,15 +434,15 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 624066461}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: 0.7204493, w: 0.6935076}
-  m_LocalPosition: {x: -3.5826817, y: -3.9641721, z: 0.15910006}
+  m_LocalRotation: {x: -0, y: -0, z: 0.0058613624, w: 0.9999829}
+  m_LocalPosition: {x: -3.8209531, y: -4.1962385, z: 0.15910006}
   m_LocalScale: {x: 0.6818, y: 0.6818, z: 0.6818}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 910623800}
   - {fileID: 1925552828}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 92.183}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0.672}
 --- !u!114 &624066465
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -455,6 +455,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1444341c324cb2d418467da43ddb41ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bulletRotationZ: 0
+  bulletMoveDir: {x: 0, y: 1}
   spawnInterval: 2
   bulletPrefab: {fileID: -2266893464664049578, guid: db904941c159dae4281e5fb40b55ebc2, type: 3}
   spawnPoint: {fileID: 1925552828}
@@ -729,7 +731,7 @@ GameObject:
   - component: {fileID: 910623800}
   - component: {fileID: 910623799}
   - component: {fileID: 910623798}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Pipe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -743,7 +745,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 910623797}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -1044,7 +1046,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1925552828}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Bullet Spawn Point
   m_TagString: Untagged
   m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
@@ -1060,7 +1062,7 @@ Transform:
   m_GameObject: {fileID: 1925552827}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.271, z: 0}
+  m_LocalPosition: {x: -0, y: 1.813, z: 0}
   m_LocalScale: {x: 0.4625, y: 0.8, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
