@@ -9,6 +9,7 @@ TagManager:
   - Player Butt
   - Knot
   - NewBase
+  - BaseMoverChanger
   layers:
   - Default
   - TransparentFX
@@ -33,8 +34,8 @@ TagManager:
   - Stage3Layer
   - Stage4Layer
   - Stage5Layer
-  - 
-  - 
+  - NewBaseLayer
+  - BaseMoverChangeLayer
   - 
   - 
   - 

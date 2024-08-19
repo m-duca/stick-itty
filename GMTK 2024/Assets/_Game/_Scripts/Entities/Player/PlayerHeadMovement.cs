@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using System.Net;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -17,6 +18,7 @@ public class PlayerHeadMovement : MonoBehaviour
     [SerializeField] private GameObject playerButt;
     [SerializeField] private GameObject playerMiddlePrefab;
     [SerializeField] private LineRenderer line;
+    [SerializeField] private Transform playerParent;
 
     // Componentes:
     private Rigidbody2D _rb;
@@ -72,6 +74,7 @@ public class PlayerHeadMovement : MonoBehaviour
         else if (collision.gameObject.CompareTag("NewBase") && !_changedPos) 
         {
             SetButtPos(collision.gameObject.transform.position);
+            playerParent.transform.parent = collision.transform;
             _changedPos = true;
             //Destroy(collision.gameObject);
         }

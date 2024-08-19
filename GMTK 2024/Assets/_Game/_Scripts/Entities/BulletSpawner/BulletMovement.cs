@@ -16,7 +16,11 @@ public class BulletMovement : MonoBehaviour
     #endregion
 
     #region Funções Unity
-    private void Start() => _rb = GetComponent<Rigidbody2D>();        
+    private void Start()
+    {
+        _rb = GetComponent<Rigidbody2D>();
+        Destroy(gameObject, lifeTime);
+    }
 
     private void FixedUpdate() => ApplyMovement();
     #endregion
