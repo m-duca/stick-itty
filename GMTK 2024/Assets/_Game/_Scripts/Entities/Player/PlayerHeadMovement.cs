@@ -7,13 +7,13 @@ using UnityEngine.SceneManagement;
 
 public class PlayerHeadMovement : MonoBehaviour
 {
-    #region Variáveis
-    [Header("Configurações:")]
+    #region Variï¿½veis
+    [Header("Configuraï¿½ï¿½es:")]
     [SerializeField] private float moveForce;
     [SerializeField] private float maxDistance;
     [SerializeField] private float resetCanMoveInterval;
 
-    [Header("Referências:")]
+    [Header("Referï¿½ncias:")]
     [SerializeField] private ScreenShake screenShakeScript;
     [SerializeField] private GameObject playerButt;
     [SerializeField] private GameObject playerMiddlePrefab;
@@ -31,18 +31,25 @@ public class PlayerHeadMovement : MonoBehaviour
     private Vector2 _lastMoveInput;
     private bool _canMove = true;
 
-    private Vector3[] _linePoints = new Vector3[5];
+    private Vector3[] _linePoints;
 
     private int _colliderStartPoint;
 
     private int _lastTargetDistance = 0;
 
     private bool _changedPos = false;
+
+    // Knots:
+    private BoxCollider2D[] _knotsColliders;
     #endregion
 
-    #region Funções Unity
+    #region Funï¿½ï¿½es Unity
     private void Start()
     {
+        _linePoints = new Vector3[line.positionCount];
+
+        _knotsColliders = new BoxCollider2D[line.positionCount - 2];
+
         ResetLineMiddlePoints();
 
         _rb = GetComponent<Rigidbody2D>();
@@ -70,12 +77,14 @@ public class PlayerHeadMovement : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Knot"))
         {
-            if (_lastTargetDistance < 3)
+            if (_lastTargetDistance < _linePoints.Length - 2)
             {
                 var knot = Instantiate(playerMiddlePrefab, collision.gameObject.transform.position, Quaternion.identity);
 
                 if (_colliderStartPoint != _linePoints.Length - 2)
                     _colliderStartPoint++;
+
+                StoreKnotCollider(collision.gameObject.GetComponent<BoxCollider2D>());
 
                 SetNewDistance(knot);
             }
@@ -191,7 +200,7 @@ public class PlayerHeadMovement : MonoBehaviour
     }
     #endregion
 
-    #region Funções Próprias
+    #region Funï¿½ï¿½es Prï¿½prias
     private void GetMoveInput()
     {
         var x = Input.GetAxisRaw("Horizontal");
@@ -225,15 +234,11 @@ public class PlayerHeadMovement : MonoBehaviour
                 line.SetPosition(i, new Vector3(buttPos.x, buttPos.y, 0f));
                 _linePoints[i] = buttPos;
             }
-            else if (i == line.positionCount - 1)
+            else if (i > _lastTargetDistance)
             {
                 var headPos = gameObject.transform.position;
                 line.SetPosition(i, new Vector3(headPos.x, headPos.y, 0f));
                 _linePoints[i] = headPos;
-            }
-            else
-            {
-                line.SetPosition(i, new Vector3(_linePoints[i].x, _linePoints[i].y, 0f));
             }
         }
     }
@@ -242,7 +247,7 @@ public class PlayerHeadMovement : MonoBehaviour
     {
         for (int i = 0; i < _linePoints.Length; i++)
         {
-            if (i != 0 && i != 4)
+            if (i != 0 && i != _linePoints.Length - 1)
                 _linePoints[i] = playerButt.transform.position;
         }
 
@@ -257,6 +262,8 @@ public class PlayerHeadMovement : MonoBehaviour
         gameObject.transform.position = playerButt.transform.position + Vector3.up * 1f;
 
         ResetLineMiddlePoints();
+        ClearKnotsColliders();
+        _lastTargetDistance = 0;
 
         _canMove = false;
         Invoke("ResetCanMove", resetCanMoveInterval);
@@ -270,32 +277,30 @@ public class PlayerHeadMovement : MonoBehaviour
     private void UpdateLineCollider()
     {
         var startPoint = _linePoints[_colliderStartPoint];
-        var endPoint = _linePoints[4];
+        var endPoint = _linePoints[_linePoints.Length - 1];
 
         var points = new Vector2[] { startPoint, endPoint };
 
         lineCollider.points = points;
     }
 
-    private void OpenGate()
-    {
-        _valveScript.connectedGate.SetActive(false);
-    }
+    private void OpenGate() => _valveScript.connectedGate.SetActive(false);
     
     private void SetNewDistance(GameObject knot) 
     {
+        _lastTargetDistance++;
+        _linePoints[_lastTargetDistance] = knot.transform.position;
+
+        /*
         for (int i = 0; i < _linePoints.Length; i++)
         {
-            if (i != 0 && i != 4)
+            if (i != 0 && i != _linePoints.Length - 1)
             {
-                if (_linePoints[i] == _linePoints[0]) 
-                {
+                if (i == _lastTargetDistance)
                     _linePoints[i] = knot.transform.position;
-                    _lastTargetDistance = i;
-                    break;
-                }
             }
         }
+        */
     }
 
     private void SetButtPos(Vector3 basePos) 
@@ -305,5 +310,29 @@ public class PlayerHeadMovement : MonoBehaviour
     }
 
     private void ResetChangedPos() => _changedPos = false;
+
+    private void StoreKnotCollider(BoxCollider2D collider) 
+    {
+        for (int i = 0; i < _knotsColliders.Length; i++) 
+        {
+            if (_knotsColliders[i] == null) 
+            {
+                _knotsColliders[i] = collider;
+                _knotsColliders[i].enabled = false;
+            }
+        }
+    }
+
+    private void ClearKnotsColliders()
+    {
+        for (int i = 0; i < _knotsColliders.Length; i++)
+        {
+            if (_knotsColliders[i] != null)
+            {
+                _knotsColliders[i].enabled = true;
+                _knotsColliders[i] = null;
+            }
+        }
+    }
     #endregion
 }

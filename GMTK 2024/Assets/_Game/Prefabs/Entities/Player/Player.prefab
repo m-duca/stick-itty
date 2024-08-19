@@ -306,12 +306,12 @@ MonoBehaviour:
   moveForce: 0.4
   maxDistance: 20
   resetCanMoveInterval: 0.25
-  line: {fileID: 6727241855786752655}
-  lineCollider: {fileID: 0}
   screenShakeScript: {fileID: 902263860448472016}
   playerButt: {fileID: 680404588759745739}
   playerMiddlePrefab: {fileID: 6538976962977459439, guid: 2ccd2fea73d99054eb2ea9084ed604b3, type: 3}
+  line: {fileID: 6727241855786752655}
   playerParent: {fileID: 1098968071677291953}
+  lineCollider: {fileID: 0}
 --- !u!1 &3785498885624487748
 GameObject:
   m_ObjectHideFlags: 0
@@ -561,6 +561,7 @@ LineRenderer:
   m_SortingLayer: 0
   m_SortingOrder: -1
   m_Positions:
+  - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 0}
