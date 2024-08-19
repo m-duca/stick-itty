@@ -310,6 +310,7 @@ MonoBehaviour:
   playerButt: {fileID: 680404588759745739}
   playerMiddlePrefab: {fileID: 6538976962977459439, guid: 2ccd2fea73d99054eb2ea9084ed604b3, type: 3}
   line: {fileID: 6727241855786752655}
+  playerParent: {fileID: 1098968071677291953}
 --- !u!1 &3785498885624487748
 GameObject:
   m_ObjectHideFlags: 0

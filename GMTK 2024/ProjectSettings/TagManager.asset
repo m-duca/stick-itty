@@ -9,17 +9,18 @@ TagManager:
   - Player Butt
   - Knot
   - NewBase
+  - BaseMoverChanger
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - BulletSpawnerLayer
   - Water
   - UI
   - BulletLayer
   - WallLayer
   - ValveLayer
-  - Bullet
+  - 
   - 
   - 
   - 
@@ -33,8 +34,8 @@ TagManager:
   - Stage3Layer
   - Stage4Layer
   - Stage5Layer
-  - 
-  - 
+  - NewBaseLayer
+  - BaseMoverChangeLayer
   - 
   - 
   - 

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using System.Net;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -17,6 +18,7 @@ public class PlayerHeadMovement : MonoBehaviour
     [SerializeField] private GameObject playerButt;
     [SerializeField] private GameObject playerMiddlePrefab;
     [SerializeField] private LineRenderer line;
+    [SerializeField] private Transform playerParent;
 
     // Componentes:
     private Rigidbody2D _rb;
@@ -71,9 +73,13 @@ public class PlayerHeadMovement : MonoBehaviour
         }
         else if (collision.gameObject.CompareTag("NewBase") && !_changedPos) 
         {
-            SetButtPos(collision.gameObject.transform.position);
-            _changedPos = true;
-            //Destroy(collision.gameObject);
+            var newButtPos = collision.gameObject.transform.Find("New Butt Pos").transform.position;
+            if (playerButt.transform.position != newButtPos) 
+            { 
+                SetButtPos(newButtPos);
+                playerParent.transform.parent = collision.transform;
+                _changedPos = true;
+            }
         }
     }
 
@@ -216,7 +222,7 @@ public class PlayerHeadMovement : MonoBehaviour
             }
             else
             {
-                line.SetPosition(i, new Vector3(_linePoints[i].x, _linePoints[i].y, 0f));
+                line.SetPosition(i, new Vector3(_linePoints[_lastTargetDistance].x, _linePoints[_lastTargetDistance].y, 0f));
             }
         }
     }
@@ -226,7 +232,7 @@ public class PlayerHeadMovement : MonoBehaviour
         for (int i = 0; i < _linePoints.Length; i++)
         {
             if (i != 0 && i != 4)
-                _linePoints[i] = gameObject.transform.position;
+                _linePoints[i] = playerButt.transform.position;
         }
 
         _lastTargetDistance = 4;
