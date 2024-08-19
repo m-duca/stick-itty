@@ -70,12 +70,15 @@ public class PlayerHeadMovement : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Knot"))
         {
-            var knot = Instantiate(playerMiddlePrefab, collision.gameObject.transform.position, Quaternion.identity);
+            if (_lastTargetDistance < 3)
+            {
+                var knot = Instantiate(playerMiddlePrefab, collision.gameObject.transform.position, Quaternion.identity);
 
-            if (_colliderStartPoint != _linePoints.Length - 2)
-                _colliderStartPoint++;
+                if (_colliderStartPoint != _linePoints.Length - 2)
+                    _colliderStartPoint++;
 
-            SetNewDistance(knot);
+                SetNewDistance(knot);
+            }
         }
         else if (collision.gameObject.CompareTag("NewBase") && !_changedPos)
         {
@@ -229,7 +232,7 @@ public class PlayerHeadMovement : MonoBehaviour
             }
             else
             {
-                line.SetPosition(i, new Vector3(_linePoints[_lastTargetDistance].x, _linePoints[_lastTargetDistance].y, 0f));
+                line.SetPosition(i, new Vector3(_linePoints[i].x, _linePoints[i].y, 0f));
             }
         }
     }
@@ -242,10 +245,10 @@ public class PlayerHeadMovement : MonoBehaviour
                 _linePoints[i] = playerButt.transform.position;
         }
 
-        _lastTargetDistance = 4;
+        _lastTargetDistance = 0;
     }
 
-    private void ResetStretch()
+    public void ResetStretch()
     {
         screenShakeScript.ApplyScreenShake();
 
@@ -284,7 +287,7 @@ public class PlayerHeadMovement : MonoBehaviour
         {
             if (i != 0 && i != 4)
             {
-                if (i != _lastTargetDistance)
+                if (_linePoints[i] == _linePoints[0]) 
                 {
                     _linePoints[i] = knot.transform.position;
                     _lastTargetDistance = i;

@@ -18,7 +18,7 @@ TagManager:
   - Water
   - UI
   - BulletLayer
-  - WallLayer
+  - SpikeLayer
   - ValveLayer
   - 
   - 
@@ -36,7 +36,7 @@ TagManager:
   - Stage5Layer
   - NewBaseLayer
   - BaseMoverChangeLayer
-  - 
+  - LineColliderLayer
   - 
   - 
   - 

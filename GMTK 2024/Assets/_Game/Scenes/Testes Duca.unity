@@ -294,79 +294,40 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b77c2363d0e26ea489c1380be33fb6ba, type: 3}
---- !u!1 &344253648
+--- !u!114 &328888312 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 59737790152113082, guid: e641da0c51560104595a2b7ab3b91b7e, type: 3}
+  m_PrefabInstance: {fileID: 2085320637357327345}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed73ecc577db18f4e84a579056baeb14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &344253648 stripped
 GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 1789299039638837386, guid: 543bc3b0db4819740b4ced6c805449e1, type: 3}
+  m_PrefabInstance: {fileID: 6168246666572884115}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 344253649}
-  - component: {fileID: 344253650}
-  m_Layer: 0
-  m_Name: Line Collider
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &344253649
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 344253648}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!68 &344253650
+--- !u!68 &344253650 stripped
 EdgeCollider2D:
+  m_CorrespondingSourceObject: {fileID: 3951538598610496435, guid: 543bc3b0db4819740b4ced6c805449e1, type: 3}
+  m_PrefabInstance: {fileID: 6168246666572884115}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &344253651
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 344253648}
   m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_EdgeRadius: 0
-  m_Points:
-  - {x: 0, y: 0}
-  - {x: 0, y: 0}
-  m_AdjacentStartPoint: {x: 0, y: 0}
-  m_AdjacentEndPoint: {x: 0, y: 0}
-  m_UseAdjacentStartPoint: 0
-  m_UseAdjacentEndPoint: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91b835184f066534c8de3d899a75e977, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playerHeadMovementScript: {fileID: 328888312}
 --- !u!1 &399359330
 GameObject:
   m_ObjectHideFlags: 0
@@ -1529,6 +1490,66 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: baa64f59914ee1345a1061a6024ecd17, type: 3}
+--- !u!1001 &6168246666572884115
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1413029377797759147, guid: 543bc3b0db4819740b4ced6c805449e1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1413029377797759147, guid: 543bc3b0db4819740b4ced6c805449e1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1413029377797759147, guid: 543bc3b0db4819740b4ced6c805449e1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1413029377797759147, guid: 543bc3b0db4819740b4ced6c805449e1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1413029377797759147, guid: 543bc3b0db4819740b4ced6c805449e1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1413029377797759147, guid: 543bc3b0db4819740b4ced6c805449e1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1413029377797759147, guid: 543bc3b0db4819740b4ced6c805449e1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1413029377797759147, guid: 543bc3b0db4819740b4ced6c805449e1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1413029377797759147, guid: 543bc3b0db4819740b4ced6c805449e1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1413029377797759147, guid: 543bc3b0db4819740b4ced6c805449e1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1789299039638837386, guid: 543bc3b0db4819740b4ced6c805449e1, type: 3}
+      propertyPath: m_Name
+      value: Line Collider
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1789299039638837386, guid: 543bc3b0db4819740b4ced6c805449e1, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 344253651}
+  m_SourcePrefab: {fileID: 100100000, guid: 543bc3b0db4819740b4ced6c805449e1, type: 3}
 --- !u!1001 &7498832502181343760
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1666,4 +1687,4 @@ SceneRoots:
   - {fileID: 896261969129439992}
   - {fileID: 652914933}
   - {fileID: 1717752879}
-  - {fileID: 344253649}
+  - {fileID: 6168246666572884115}
