@@ -1,0 +1,70 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7699210691094252223
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1805798133451114243}
+  - component: {fileID: 1921635083286687989}
+  - component: {fileID: 3280937288899801977}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1805798133451114243
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7699210691094252223}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1921635083286687989
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7699210691094252223}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b8c95a62ead00744ab0255d0505d873, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  musics:
+  - {fileID: 0}
+  sfxs:
+  - {fileID: 11400000, guid: daaab21abeaa5af4ba754093c0fab281, type: 2}
+  - {fileID: 11400000, guid: d173c2b269477e4498ab037b711e5184, type: 2}
+  - {fileID: 11400000, guid: 07805dc4a303ee2469178121669f81ed, type: 2}
+  - {fileID: 11400000, guid: 90ed3ad3450820b4eb4a7f1000c49926, type: 2}
+  - {fileID: 11400000, guid: 2289f2aea00579f47ba7f8999ff82d59, type: 2}
+  - {fileID: 11400000, guid: aa877077999974944a7a0790cb29eaee, type: 2}
+  - {fileID: 11400000, guid: fa423ba8555d0dc48b50b8e701049679, type: 2}
+  - {fileID: 11400000, guid: 077468894e6988640b5b3335ffecdffc, type: 2}
+--- !u!114 &3280937288899801977
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7699210691094252223}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a97578dda5e29c842a1cb599abd1dcfb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
