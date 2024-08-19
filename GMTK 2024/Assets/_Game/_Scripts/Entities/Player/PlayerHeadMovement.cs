@@ -143,6 +143,7 @@ public class PlayerHeadMovement : MonoBehaviour
             case 17:
                 if (_menuManager != null)
                 {
+                    ResetStretch();
                     _menuManager.ReturnToMenu();
                 }
                 break;
@@ -151,7 +152,7 @@ public class PlayerHeadMovement : MonoBehaviour
             case 18:
                 if (_menuManager != null)
                 {
-                    
+                    _menuManager.OpenStage("CENA CAIQUE");
                 }
                 break;
 
@@ -159,7 +160,7 @@ public class PlayerHeadMovement : MonoBehaviour
             case 19:
                 if (_menuManager != null)
                 {
-                    
+                    _menuManager.OpenStage("CENA CAIQUE");
                 }
                 break;
 
@@ -167,7 +168,7 @@ public class PlayerHeadMovement : MonoBehaviour
             case 20:
                 if (_menuManager != null)
                 {
-                    
+                    _menuManager.OpenStage("CENA CAIQUE");
                 }
                 break;
 
@@ -175,7 +176,7 @@ public class PlayerHeadMovement : MonoBehaviour
             case 21:
                 if (_menuManager != null)
                 {
-                    
+                    _menuManager.OpenStage("CENA CAIQUE");
                 }
                 break;
 
@@ -183,7 +184,7 @@ public class PlayerHeadMovement : MonoBehaviour
             case 22:
                 if (_menuManager != null)
                 {
-                    
+                    _menuManager.OpenStage("CENA CAIQUE");
                 }
                 break;
         }
