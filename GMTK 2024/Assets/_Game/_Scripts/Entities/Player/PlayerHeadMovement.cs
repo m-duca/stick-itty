@@ -73,10 +73,13 @@ public class PlayerHeadMovement : MonoBehaviour
         }
         else if (collision.gameObject.CompareTag("NewBase") && !_changedPos) 
         {
-            SetButtPos(collision.gameObject.transform.position);
-            playerParent.transform.parent = collision.transform;
-            _changedPos = true;
-            //Destroy(collision.gameObject);
+            var newButtPos = collision.gameObject.transform.Find("New Butt Pos").transform.position;
+            if (playerButt.transform.position != newButtPos) 
+            { 
+                SetButtPos(newButtPos);
+                playerParent.transform.parent = collision.transform;
+                _changedPos = true;
+            }
         }
     }
 
