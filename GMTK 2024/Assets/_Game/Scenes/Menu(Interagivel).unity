@@ -192,7 +192,7 @@ Canvas:
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_Camera: {fileID: 4196287553605771079}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -297,10 +297,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47480b066e095ff44923f438a2ff094f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playButtonContainer: {fileID: 730162317}
-  playButtonText: {fileID: 569717130}
-  quitButtonContainer: {fileID: 1519189607}
-  quitButtonText: {fileID: 1501116378}
+  mainMenuElements:
+  - {fileID: 730162317}
+  - {fileID: 1519189607}
+  - {fileID: 569717130}
+  - {fileID: 1501116378}
+  stageSelectionElements:
+  - {fileID: 1842428929}
+  - {fileID: 1998060634}
+  - {fileID: 331145001}
+  - {fileID: 1259866436}
+  - {fileID: 1322759677}
+  - {fileID: 557367018}
+  - {fileID: 1123616382}
+  - {fileID: 1927527427}
+  - {fileID: 1656842673}
+  - {fileID: 930267080}
+  - {fileID: 1147005784}
+  - {fileID: 548360438}
 --- !u!4 &240337731
 Transform:
   m_ObjectHideFlags: 0
@@ -457,13 +471,13 @@ GameObject:
   - component: {fileID: 331145004}
   - component: {fileID: 331145003}
   - component: {fileID: 331145002}
-  m_Layer: 16
+  m_Layer: 18
   m_Name: Stage2ButtonContainer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!61 &331145002
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -571,8 +585,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -12.5, y: 0, z: 0}
-  m_LocalScale: {x: 5, y: 2.857143, z: 4.9122157}
-  m_ConstrainProportionsScale: 1
+  m_LocalScale: {x: 5, y: 3, z: 5.1578264}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -723,7 +737,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &548360439
 RectTransform:
   m_ObjectHideFlags: 0
@@ -851,13 +865,13 @@ GameObject:
   - component: {fileID: 557367021}
   - component: {fileID: 557367020}
   - component: {fileID: 557367019}
-  m_Layer: 16
+  m_Layer: 20
   m_Name: Stage5ButtonContainer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!61 &557367019
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -965,8 +979,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 6, z: 0}
-  m_LocalScale: {x: 5, y: 2.857143, z: 4.9122157}
-  m_ConstrainProportionsScale: 1
+  m_LocalScale: {x: 5, y: 3, z: 5.1578264}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -987,7 +1001,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &569717131
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1004,7 +1018,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -640, y: -50}
+  m_AnchoredPosition: {x: -640, y: -75}
   m_SizeDelta: {x: 300, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &569717132
@@ -1121,7 +1135,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!61 &730162318
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1251,7 +1265,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &930267081
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1515,7 +1529,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1123616383
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1649,7 +1663,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1147005785
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1845,13 +1859,13 @@ GameObject:
   - component: {fileID: 1259866439}
   - component: {fileID: 1259866438}
   - component: {fileID: 1259866437}
-  m_Layer: 16
+  m_Layer: 21
   m_Name: Stage3ButtonContainer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!61 &1259866437
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1959,8 +1973,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 12.5, y: 6, z: 0}
-  m_LocalScale: {x: 5, y: 2.857143, z: 4.9122157}
-  m_ConstrainProportionsScale: 1
+  m_LocalScale: {x: 5, y: 3, z: 5.1578264}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2105,13 +2119,13 @@ GameObject:
   - component: {fileID: 1322759680}
   - component: {fileID: 1322759679}
   - component: {fileID: 1322759678}
-  m_Layer: 16
+  m_Layer: 19
   m_Name: Stage4ButtonContainer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!61 &1322759678
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2219,8 +2233,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -12.5, y: 6, z: 0}
-  m_LocalScale: {x: 5, y: 2.857143, z: 4.9122157}
-  m_ConstrainProportionsScale: 1
+  m_LocalScale: {x: 5, y: 3, z: 5.1578264}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2241,7 +2255,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1501116379
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2258,7 +2272,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 640, y: -50}
+  m_AnchoredPosition: {x: 640, y: -75}
   m_SizeDelta: {x: 300, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1501116380
@@ -2375,7 +2389,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!61 &1519189608
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2505,7 +2519,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1656842674
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2763,13 +2777,13 @@ GameObject:
   - component: {fileID: 1842428932}
   - component: {fileID: 1842428931}
   - component: {fileID: 1842428930}
-  m_Layer: 16
+  m_Layer: 17
   m_Name: BackButtonContainer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!61 &1842428930
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2899,7 +2913,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1927527428
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3027,13 +3041,13 @@ GameObject:
   - component: {fileID: 1998060637}
   - component: {fileID: 1998060636}
   - component: {fileID: 1998060635}
-  m_Layer: 16
+  m_Layer: 22
   m_Name: Stage1ButtonContainer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!61 &1998060635
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3141,8 +3155,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 12.5, y: 0, z: 0}
-  m_LocalScale: {x: 5, y: 2.857143, z: 4.9122157}
-  m_ConstrainProportionsScale: 1
+  m_LocalScale: {x: 5, y: 3, z: 5.1578264}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3165,6 +3179,7 @@ MonoBehaviour:
   playerButt: {fileID: 680404588115200291}
   playerMiddlePrefab: {fileID: 6538976962977459439, guid: 2ccd2fea73d99054eb2ea9084ed604b3, type: 3}
   line: {fileID: 6727241855160424295}
+  playerParent: {fileID: 0}
 --- !u!1 &680404588115200291
 GameObject:
   m_ObjectHideFlags: 0
