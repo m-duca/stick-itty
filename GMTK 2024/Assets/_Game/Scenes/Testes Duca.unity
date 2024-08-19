@@ -569,8 +569,8 @@ GameObject:
   - component: {fileID: 877757252}
   - component: {fileID: 877757251}
   - component: {fileID: 877757250}
-  m_Layer: 0
-  m_Name: Player Butt (5)
+  m_Layer: 9
+  m_Name: EndPortal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
