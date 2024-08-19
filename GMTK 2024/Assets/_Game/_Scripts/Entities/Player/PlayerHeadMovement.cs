@@ -19,6 +19,7 @@ public class PlayerHeadMovement : MonoBehaviour
     [SerializeField] private GameObject playerMiddlePrefab;
     [SerializeField] private LineRenderer line;
     [SerializeField] private Transform playerParent;
+    [SerializeField] private EdgeCollider2D lineCollider;
 
     // Componentes:
     private Rigidbody2D _rb;
@@ -31,6 +32,8 @@ public class PlayerHeadMovement : MonoBehaviour
     private bool _canMove = true;
 
     private Vector3[] _linePoints = new Vector3[5];
+
+    private int _colliderStartPoint;
 
     private int _lastTargetDistance = 0;
 
@@ -50,6 +53,8 @@ public class PlayerHeadMovement : MonoBehaviour
     {
         UpdateLinePoints();
 
+        UpdateLineCollider();
+
         GetMoveInput();
 
         HasReachMaxDistance();
@@ -59,23 +64,25 @@ public class PlayerHeadMovement : MonoBehaviour
     {
         if (_moveInput != Vector2.zero && _canMove) 
             ApplyMove();
-
-        LineCollision();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Knot")) 
+        if (collision.gameObject.CompareTag("Knot"))
         {
             var knot = Instantiate(playerMiddlePrefab, collision.gameObject.transform.position, Quaternion.identity);
 
+            if (_colliderStartPoint != _linePoints.Length - 2)
+                _colliderStartPoint++;
+
             SetNewDistance(knot);
         }
-        else if (collision.gameObject.CompareTag("NewBase") && !_changedPos) 
+        else if (collision.gameObject.CompareTag("NewBase") && !_changedPos)
         {
             var newButtPos = collision.gameObject.transform.Find("New Butt Pos").transform.position;
-            if (playerButt.transform.position != newButtPos) 
-            { 
+            if (playerButt.transform.position != newButtPos)
+            {
+                _colliderStartPoint = 0;
                 SetButtPos(newButtPos);
                 playerParent.transform.parent = collision.transform;
                 _changedPos = true;
@@ -256,6 +263,16 @@ public class PlayerHeadMovement : MonoBehaviour
             Destroy(point);
     }
 
+    private void UpdateLineCollider()
+    {
+        var startPoint = _linePoints[_colliderStartPoint];
+        var endPoint = _linePoints[4];
+
+        var points = new Vector2[] { startPoint, endPoint };
+
+        lineCollider.points = points;
+    }
+
     private void OpenGate()
     {
         _valveScript.connectedGate.SetActive(false);
@@ -284,30 +301,5 @@ public class PlayerHeadMovement : MonoBehaviour
     }
 
     private void ResetChangedPos() => _changedPos = false;
-
-    private void LineCollision() 
-    {
-        for (int i = 0; i < _linePoints.Length; i++) 
-        {
-            if (i < _linePoints.Length - 1) 
-            {
-                var startPos = _linePoints[i];
-                var endPos = _linePoints[i + 1];
-                var dir = endPos - startPos;
-
-                Ray ray = new Ray(startPos, dir);
-                RaycastHit hit;
-
-                if (Physics.Raycast(ray, out hit, dir.magnitude))
-                {
-                    //Debug.Log("Raycast hit: " + hit.collider.name);
-                }
-                else 
-                {
-                    //Debug.Log("Não foi!");
-                }
-            }
-        }
-    }
     #endregion
 }

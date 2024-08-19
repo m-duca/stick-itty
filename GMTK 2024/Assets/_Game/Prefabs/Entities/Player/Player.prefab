@@ -306,10 +306,11 @@ MonoBehaviour:
   moveForce: 0.4
   maxDistance: 20
   resetCanMoveInterval: 0.25
+  line: {fileID: 6727241855786752655}
+  lineCollider: {fileID: 0}
   screenShakeScript: {fileID: 902263860448472016}
   playerButt: {fileID: 680404588759745739}
   playerMiddlePrefab: {fileID: 6538976962977459439, guid: 2ccd2fea73d99054eb2ea9084ed604b3, type: 3}
-  line: {fileID: 6727241855786752655}
   playerParent: {fileID: 1098968071677291953}
 --- !u!1 &3785498885624487748
 GameObject:
@@ -357,6 +358,7 @@ GameObject:
   - component: {fileID: 2444062935942313427}
   - component: {fileID: 2269273765063421059}
   - component: {fileID: 902263860448472016}
+  - component: {fileID: 7061484947629853977}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -472,6 +474,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animationSpeed: 1
+--- !u!114 &7061484947629853977
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4804268233045021149}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f85d71f708f7c3d489b66d3f79da5c22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6969919790795283077
 GameObject:
   m_ObjectHideFlags: 0
