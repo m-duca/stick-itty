@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class LineCollision : MonoBehaviour
 {
-    [Header("Configurações:")]
+    // Referências:
+    private PlayerHeadMovement _playerHeadMovementScript;
 
-    [Header("Referências:")]
-    [SerializeField] private PlayerHeadMovement _playerHeadMovementScript;
+    private void Start() => _playerHeadMovementScript = FindObjectOfType<PlayerHeadMovement>();
 
     private void OnTriggerStay2D(Collider2D collision)
     {
