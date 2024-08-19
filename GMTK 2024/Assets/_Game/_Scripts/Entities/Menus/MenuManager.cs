@@ -1,23 +1,32 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour
 {
     [Header("Referências:")]
-    [SerializeField] public GameObject playButtonContainer;
-    [SerializeField] public GameObject playButtonText;
-    [SerializeField] public GameObject quitButtonContainer;
-    [SerializeField] public GameObject quitButtonText;
+    [SerializeField] public List<GameObject> mainMenuElements;
+    [SerializeField] public List<GameObject> stageSelectionElements;
 
     public void OpenStageSelection()
     {
         Debug.Log("Selecionando fases...");
-        playButtonContainer.SetActive(false);
-        playButtonText.SetActive(false);
+        foreach (GameObject element in mainMenuElements)
+        {
+            if (element != null)
+            {
+                element.SetActive(false);
+            }
+        }
 
-        quitButtonContainer.SetActive(false);
-        quitButtonText.SetActive(false);
+        foreach (GameObject element in stageSelectionElements)
+        {
+            if (element != null)
+            {
+                element.SetActive(true);
+            }
+        }
     }
 
     public void QuitGame()
@@ -28,11 +37,27 @@ public class MenuManager : MonoBehaviour
 
     public void ReturnToMenu()
     {
+        Debug.Log("Voltou ao menu");
+        foreach (GameObject element in stageSelectionElements)
+        {
+            if (element != null)
+            {
+                element.SetActive(false);
+            }
+        }
 
+        foreach (GameObject element in mainMenuElements)
+        {
+            if (element != null)
+            {
+                element.SetActive(true);
+            }
+        }
     }
 
     public void OpenStage(string stage)
     {
-
+        Debug.Log("Fase " +  stage + " Aberta");
+        SceneManager.LoadScene(stage);
     }
 }
