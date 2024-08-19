@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
+using UnityEditor.SceneManagement;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -128,6 +129,12 @@ public class PlayerHeadMovement : MonoBehaviour
             case 8:
                 _valveScript = collision.gameObject.GetComponent<ValveScript>();
                 OpenGate();
+                break;
+
+
+            // Portal FAZER VARIAVEL ESTATICA
+            case 9:
+                SceneManager.LoadScene("CENA CAIQUE");
                 break;
 
             // SelecionarFases
