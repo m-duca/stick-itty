@@ -1,8 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using 
-
 public class PauseMenuManager : MonoBehaviour
 {
     [Header("Referências:")]

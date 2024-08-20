@@ -52,7 +52,7 @@ public class PlayerHeadMovement : MonoBehaviour
     // Knots:
     private BoxCollider2D[] _knotsColliders;
 
-    private Vector2 _headSpawnPosDir;
+    private Vector2 _headSpawnPosDir = Vector2.up;
     #endregion
 
     #region Funções Unity
