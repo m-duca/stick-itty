@@ -304,7 +304,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveForce: 0.4
-  maxDistance: 20
+  maxDistance: 10
   resetCanMoveInterval: 0.25
   screenShakeScript: {fileID: 902263860448472016}
   playerButt: {fileID: 680404588759745739}
