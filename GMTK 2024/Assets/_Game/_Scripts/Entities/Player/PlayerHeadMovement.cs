@@ -51,6 +51,8 @@ public class PlayerHeadMovement : MonoBehaviour
 
     // Knots:
     private BoxCollider2D[] _knotsColliders;
+
+    private Vector2 _headSpawnPosDir;
     #endregion
 
     #region Funções Unity
@@ -119,6 +121,8 @@ public class PlayerHeadMovement : MonoBehaviour
                 SetButtPos(newButtPos);
                 playerParent.transform.parent = collision.transform;
                 _changedPos = true;
+
+                _headSpawnPosDir = collision.gameObject.GetComponent<BaseHeadPos>().OffsetDir;
 
                 if (AudioManager.Instance != null)
                 {
@@ -313,7 +317,7 @@ public class PlayerHeadMovement : MonoBehaviour
         screenShakeScript.ApplyScreenShake();
 
         _rb.velocity = Vector2.zero;
-        gameObject.transform.position = playerButt.transform.position + Vector3.up * 1f;
+        gameObject.transform.position = playerButt.transform.position + (Vector3)_headSpawnPosDir * 1f;
 
         ResetLineMiddlePoints();
         ClearKnotsColliders();
