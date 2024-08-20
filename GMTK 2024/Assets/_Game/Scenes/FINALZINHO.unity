@@ -326,7 +326,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &355228704
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1448,7 +1448,15 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 344253650}
     - target: {fileID: 59737790152113082, guid: e641da0c51560104595a2b7ab3b91b7e, type: 3}
+      propertyPath: buttonsLayers.m_Bits
+      value: 131072
+      objectReference: {fileID: 0}
+    - target: {fileID: 59737790152113082, guid: e641da0c51560104595a2b7ab3b91b7e, type: 3}
       propertyPath: lineColliders.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 59737790152113082, guid: e641da0c51560104595a2b7ab3b91b7e, type: 3}
+      propertyPath: layersToIgnore.Array.size
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 59737790152113082, guid: e641da0c51560104595a2b7ab3b91b7e, type: 3}
@@ -1470,6 +1478,30 @@ PrefabInstance:
     - target: {fileID: 59737790152113082, guid: e641da0c51560104595a2b7ab3b91b7e, type: 3}
       propertyPath: lineColliders.Array.data[4]
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 59737790152113082, guid: e641da0c51560104595a2b7ab3b91b7e, type: 3}
+      propertyPath: layersToIgnore.Array.data[0].m_Bits
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 59737790152113082, guid: e641da0c51560104595a2b7ab3b91b7e, type: 3}
+      propertyPath: layersToIgnore.Array.data[1].m_Bits
+      value: 64
+      objectReference: {fileID: 0}
+    - target: {fileID: 59737790152113082, guid: e641da0c51560104595a2b7ab3b91b7e, type: 3}
+      propertyPath: layersToIgnore.Array.data[2].m_Bits
+      value: 128
+      objectReference: {fileID: 0}
+    - target: {fileID: 59737790152113082, guid: e641da0c51560104595a2b7ab3b91b7e, type: 3}
+      propertyPath: layersToIgnore.Array.data[3].m_Bits
+      value: 256
+      objectReference: {fileID: 0}
+    - target: {fileID: 59737790152113082, guid: e641da0c51560104595a2b7ab3b91b7e, type: 3}
+      propertyPath: layersToIgnore.Array.data[4].m_Bits
+      value: 512
+      objectReference: {fileID: 0}
+    - target: {fileID: 59737790152113082, guid: e641da0c51560104595a2b7ab3b91b7e, type: 3}
+      propertyPath: layersToIgnore.Array.data[5].m_Bits
+      value: 512
       objectReference: {fileID: 0}
     - target: {fileID: 1098968071677291953, guid: e641da0c51560104595a2b7ab3b91b7e, type: 3}
       propertyPath: m_LocalPosition.x
