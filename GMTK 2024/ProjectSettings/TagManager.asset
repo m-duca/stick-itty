@@ -56,3 +56,9 @@ TagManager:
   - name: New Layer 3
     uniqueID: 3248852461
     locked: 0
+  - name: PauseLayer
+    uniqueID: 1405483243
+    locked: 0
+  - name: PlayerLayer
+    uniqueID: 153675455
+    locked: 0
