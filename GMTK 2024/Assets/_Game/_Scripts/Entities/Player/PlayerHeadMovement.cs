@@ -2,19 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
+using System.Net.NetworkInformation;
 using UnityEditor.SceneManagement;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class PlayerHeadMovement : MonoBehaviour
 {
-    #region Vari�veis
-    [Header("Configura��es:")]
+    #region Variáveis
+    [Header("Configurações:")]
     [SerializeField] private float moveForce;
     [SerializeField] private float maxDistance;
     [SerializeField] private float resetCanMoveInterval;
 
-    [Header("Refer�ncias:")]
+    [Header("Referências:")]
     [SerializeField] private ScreenShake screenShakeScript;
     [SerializeField] private GameObject playerButt;
     [SerializeField] private GameObject playerMiddlePrefab;
@@ -42,11 +43,17 @@ public class PlayerHeadMovement : MonoBehaviour
 
     private bool _changedPos = false;
 
+    // Audio:
+    private static int _frogSfxIndex = 1;
+    private static int _knotSfxIndex = 1;
+    private static int _checkpointSfxIndex = 1;
+    private static int _buttonSfxIndex = 1;
+
     // Knots:
     private BoxCollider2D[] _knotsColliders;
     #endregion
 
-    #region Fun��es Unity
+    #region Funções Unity
     private void Start()
     {
         _linePoints = new Vector3[line.positionCount];
@@ -92,6 +99,15 @@ public class PlayerHeadMovement : MonoBehaviour
                 StoreKnotCollider(collision.gameObject.GetComponent<BoxCollider2D>());
 
                 SetNewDistance(knot);
+
+                if (AudioManager.Instance != null) 
+                {
+                    AudioManager.Instance.PlaySFX("knot " + _knotSfxIndex);
+                    if (_knotSfxIndex == 1)
+                        _knotSfxIndex = 2;
+                    else
+                        _knotSfxIndex = 1;
+                }
             }
         }
         else if (collision.gameObject.CompareTag("NewBase") && !_changedPos)
@@ -103,6 +119,21 @@ public class PlayerHeadMovement : MonoBehaviour
                 SetButtPos(newButtPos);
                 playerParent.transform.parent = collision.transform;
                 _changedPos = true;
+
+                if (AudioManager.Instance != null)
+                {
+                    AudioManager.Instance.PlaySFX("frog " + _frogSfxIndex);
+                    if (_frogSfxIndex == 1)
+                        _frogSfxIndex = 2;
+                    else
+                        _frogSfxIndex = 1;
+
+                    AudioManager.Instance.PlaySFX("checkpoint " + _checkpointSfxIndex);
+                    if (_checkpointSfxIndex == 1)
+                        _checkpointSfxIndex = 2;
+                    else
+                        _checkpointSfxIndex = 1;
+                }
             }
         }
     }
@@ -149,6 +180,7 @@ public class PlayerHeadMovement : MonoBehaviour
             case 15:
                 if (_menuManager != null)
                 {
+                    ButtonSfx();
                     ResetStretch();
                     _menuManager.OpenStageSelection();
                 }
@@ -158,6 +190,7 @@ public class PlayerHeadMovement : MonoBehaviour
             case 16:
                 if (_menuManager != null)
                 {
+                    ButtonSfx();
                     ResetStretch();
                     _menuManager.QuitGame();
                 }
@@ -167,6 +200,7 @@ public class PlayerHeadMovement : MonoBehaviour
             case 17:
                 if (_menuManager != null)
                 {
+                    ButtonSfx();
                     ResetStretch();
                     _menuManager.ReturnToMenu();
                 }
@@ -176,6 +210,7 @@ public class PlayerHeadMovement : MonoBehaviour
             case 18:
                 if (_menuManager != null)
                 {
+                    ButtonSfx();
                     _menuManager.OpenStage("FINALZINHO");
                 }
                 break;
@@ -184,6 +219,7 @@ public class PlayerHeadMovement : MonoBehaviour
             case 19:
                 if (_menuManager != null)
                 {
+                    ButtonSfx();
                     _menuManager.OpenStage("CENA CAIQUE");
                 }
                 break;
@@ -192,6 +228,7 @@ public class PlayerHeadMovement : MonoBehaviour
             case 20:
                 if (_menuManager != null)
                 {
+                    ButtonSfx();
                     _menuManager.OpenStage("Testes Duca");
                 }
                 break;
@@ -200,6 +237,7 @@ public class PlayerHeadMovement : MonoBehaviour
             case 21:
                 if (_menuManager != null)
                 {
+                    ButtonSfx();
                     _menuManager.OpenStage("CENA CAIQUE");
                 }
                 break;
@@ -208,6 +246,7 @@ public class PlayerHeadMovement : MonoBehaviour
             case 22:
                 if (_menuManager != null)
                 {
+                    ButtonSfx();
                     _menuManager.OpenStage("CENA CAIQUE");
                 }
                 break;
@@ -215,7 +254,7 @@ public class PlayerHeadMovement : MonoBehaviour
     }
     #endregion
 
-    #region Fun��es Pr�prias
+    #region Funções Próprias
     private void GetMoveInput()
     {
         var x = Input.GetAxisRaw("Horizontal");
@@ -362,6 +401,18 @@ public class PlayerHeadMovement : MonoBehaviour
         {
             PlayerPrefs.SetInt("UnlockedStages", unlockedStages + 1);
             PlayerPrefs.Save();
+        }
+    }
+
+    private void ButtonSfx() 
+    {
+        if (AudioManager.Instance != null)
+        {
+            AudioManager.Instance.PlaySFX("button " + _buttonSfxIndex);
+            if (_buttonSfxIndex == 1)
+                _buttonSfxIndex = 2;
+            else
+                _buttonSfxIndex = 1;
         }
     }
     #endregion

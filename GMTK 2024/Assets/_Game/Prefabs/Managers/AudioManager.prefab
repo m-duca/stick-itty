@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   musics:
-  - {fileID: 0}
+  - {fileID: 11400000, guid: da27b6504ce6abb4abf7d600f8d672c3, type: 2}
   sfxs:
   - {fileID: 11400000, guid: daaab21abeaa5af4ba754093c0fab281, type: 2}
   - {fileID: 11400000, guid: d173c2b269477e4498ab037b711e5184, type: 2}
@@ -56,6 +56,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: aa877077999974944a7a0790cb29eaee, type: 2}
   - {fileID: 11400000, guid: fa423ba8555d0dc48b50b8e701049679, type: 2}
   - {fileID: 11400000, guid: 077468894e6988640b5b3335ffecdffc, type: 2}
+  - {fileID: 11400000, guid: 603a664966fee924bba6a5fc61edeabf, type: 2}
 --- !u!114 &3280937288899801977
 MonoBehaviour:
   m_ObjectHideFlags: 0
