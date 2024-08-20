@@ -218,7 +218,7 @@ public class PlayerHeadMovement : MonoBehaviour
                 if (_menuManager != null)
                 {
                     ButtonSfx();
-                    _menuManager.OpenStage("FINALZINHO");
+                    _menuManager.OpenStage("Level 1");
                 }
                 break;
 

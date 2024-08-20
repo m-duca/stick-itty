@@ -62,3 +62,6 @@ TagManager:
   - name: PlayerLayer
     uniqueID: 153675455
     locked: 0
+  - name: Portal
+    uniqueID: 1984666983
+    locked: 0
