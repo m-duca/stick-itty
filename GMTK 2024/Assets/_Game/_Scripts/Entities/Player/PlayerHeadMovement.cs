@@ -72,8 +72,6 @@ public class PlayerHeadMovement : MonoBehaviour
 
     private void Update()
     {
-        playerButt.transform.rotation = Quaternion.Euler(0f, 0f, 90f);
-
         UpdateLinePoints();
 
         UpdateLineCollider();
@@ -227,7 +225,7 @@ public class PlayerHeadMovement : MonoBehaviour
                 if (_menuManager != null)
                 {
                     ButtonSfx();
-                    _menuManager.OpenStage("CENA CAIQUE");
+                    _menuManager.OpenStage("Level 2");
                 }
                 break;
 
@@ -236,7 +234,7 @@ public class PlayerHeadMovement : MonoBehaviour
                 if (_menuManager != null)
                 {
                     ButtonSfx();
-                    _menuManager.OpenStage("Testes Duca");
+                    _menuManager.OpenStage("Level 3");
                 }
                 break;
 
