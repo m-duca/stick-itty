@@ -5,28 +5,28 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/_Game/Scenes/Menu.unity
     guid: b40b9574c4ada4949b9d08ad3becaa47
-  - enabled: 1
+  - enabled: 0
     path: Assets/_Game/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 1
+  - enabled: 0
     path: Assets/_Game/Scenes/CENA CAIQUE.unity
     guid: 24cae89252934174188ba059737e2a3c
-  - enabled: 1
+  - enabled: 0
     path: Assets/_Game/Scenes/Cena1TESTE.unity
     guid: c7cb1e5a4ef5770488194fcd2dd0cb9c
-  - enabled: 1
+  - enabled: 0
     path: Assets/_Game/Scenes/FINALZINHO.unity
     guid: 17d8e234c4d1a2445bedb8740f1fec2a
-  - enabled: 1
+  - enabled: 0
     path: Assets/_Game/Scenes/Testes Duca.unity
     guid: b8c6fc109efe9e7478d486bd893d5da0
   - enabled: 1
     path: Assets/_Game/Scenes/Menu(Interagivel).unity
     guid: 3d1bbeaa86e1d9a40b376b823d745330
-  - enabled: 1
+  - enabled: 0
     path: Assets/_Game/Scenes/TESTEFINAL.unity
     guid: b1506600837b5f949864ea60ec5fb5c9
   - enabled: 1
