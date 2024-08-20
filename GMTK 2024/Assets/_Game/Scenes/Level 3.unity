@@ -1448,6 +1448,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Valve
       objectReference: {fileID: 0}
+    - target: {fileID: 8704770816821119094, guid: 45a0314f7fa15c5448dd03d8064c9187, type: 3}
+      propertyPath: connectedGate
+      value: 
+      objectReference: {fileID: 1587467993}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -41450,6 +41454,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ff9aa2112502d2d47b9958dbb82f0ba6, type: 3}
+--- !u!1 &1587467993 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7841400280195981214, guid: ff9aa2112502d2d47b9958dbb82f0ba6, type: 3}
+  m_PrefabInstance: {fileID: 1587467992}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1610248481
 PrefabInstance:
   m_ObjectHideFlags: 0
