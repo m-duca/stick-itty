@@ -559,8 +559,8 @@ Transform:
   m_GameObject: {fileID: 5708147250760560385}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.282, z: -0.19879}
-  m_LocalScale: {x: 1.0648284, y: 1.0648284, z: 1.0648284}
+  m_LocalPosition: {x: 0, y: 0.522, z: -0.2254}
+  m_LocalScale: {x: 1.4036568, y: 1.4036568, z: 1.4036568}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6184158290558552989}
@@ -605,7 +605,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 4
   m_Sprite: {fileID: 21300000, guid: 39546ac0cf973154fb91dfa5c6bbc1fd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -690,7 +690,7 @@ LineRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -1
+  m_SortingOrder: 5
   m_Positions:
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 0}
@@ -706,13 +706,31 @@ LineRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.5086708
-        inSlope: 0
-        outSlope: 0
+        value: 0.30000305
+        inSlope: -1.69582
+        outSlope: -1.69582
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.4846154
+        value: 0.47272727
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 0.99615383
+        value: 0.27272728
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
@@ -783,8 +801,8 @@ Transform:
   m_GameObject: {fileID: 8267299342049328260}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.16231258, z: -0.031559}
-  m_LocalScale: {x: 1.0648284, y: 1.0648284, z: 1.0648284}
+  m_LocalPosition: {x: 0, y: -0.06369014, z: -0.0049528}
+  m_LocalScale: {x: 1.4036568, y: 1.4036568, z: 1.4036568}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6184158290558552989}
@@ -829,7 +847,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 6
   m_Sprite: {fileID: 21300000, guid: e8c0c90c09faa344ea436403c31b57b2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
