@@ -6,6 +6,12 @@ public class PauseMenuManager : MonoBehaviour
     [Header("Referências:")]
     [SerializeField] private GameObject _pausePanel;
     private bool _paused = false;
+    private PlayerHeadMovement _playerHeadMovement;
+
+    public void Start()
+    {
+        _playerHeadMovement = FindObjectOfType<PlayerHeadMovement>();
+    }
 
     public void Update()
     {
@@ -31,8 +37,6 @@ public class PauseMenuManager : MonoBehaviour
     {
         _pausePanel.SetActive(true);
         _paused = true;
-
-        
     }
 
     public void Continue()

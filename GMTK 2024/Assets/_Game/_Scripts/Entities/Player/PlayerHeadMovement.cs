@@ -93,7 +93,7 @@ public class PlayerHeadMovement : MonoBehaviour
         {
             if (_lastTargetDistance < _linePoints.Length - 2)
             {
-                var knot = Instantiate(playerMiddlePrefab, collision.gameObject.transform.position, Quaternion.identity);
+                var knot = Instantiate(playerMiddlePrefab, collision.ClosestPoint(gameObject.transform.position), Quaternion.identity);
 
                 if (_colliderStartPoint != _linePoints.Length - 2)
                     _colliderStartPoint++;
