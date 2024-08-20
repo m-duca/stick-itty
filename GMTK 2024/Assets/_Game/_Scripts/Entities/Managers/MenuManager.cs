@@ -8,6 +8,10 @@ public class MenuManager : MonoBehaviour
     [Header("Referências:")]
     [SerializeField] public List<GameObject> mainMenuElements;
     [SerializeField] public List<GameObject> stageSelectionElements;
+    [SerializeField] public GameObject stage2ButtonContainer;
+    [SerializeField] public GameObject stage3ButtonContainer;
+    [SerializeField] public GameObject stage4ButtonContainer;
+    [SerializeField] public GameObject stage5ButtonContainer;
 
     public void OpenStageSelection()
     {
@@ -27,6 +31,8 @@ public class MenuManager : MonoBehaviour
                 element.SetActive(true);
             }
         }
+
+        CheckUnlockedStages();
     }
 
     public void QuitGame()
@@ -59,5 +65,19 @@ public class MenuManager : MonoBehaviour
     {
         Debug.Log("Fase " +  stage + " Aberta");
         SceneManager.LoadScene(stage);
+    }
+
+    public void CheckUnlockedStages()
+    {
+        int unlockedStages = PlayerPrefs.GetInt("UnlockedStages", 1);
+        stage2ButtonContainer.SetActive(false);
+        stage3ButtonContainer.SetActive(false);
+        stage4ButtonContainer.SetActive(false);
+        stage5ButtonContainer.SetActive(false);
+
+        if (unlockedStages >= 2) stage2ButtonContainer.SetActive(true);
+        if (unlockedStages >= 3) stage3ButtonContainer.SetActive(true);
+        if (unlockedStages >= 4) stage4ButtonContainer.SetActive(true);
+        if (unlockedStages >= 5) stage5ButtonContainer.SetActive(true);
     }
 }

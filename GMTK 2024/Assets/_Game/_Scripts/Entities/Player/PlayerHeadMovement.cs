@@ -26,6 +26,7 @@ public class PlayerHeadMovement : MonoBehaviour
     private Rigidbody2D _rb;
     private ValveScript _valveScript;
     private MenuManager _menuManager;
+    private PortalManager _portalManager;
 
     // Inputs:
     private Vector2 _moveInput;
@@ -55,6 +56,7 @@ public class PlayerHeadMovement : MonoBehaviour
 
         _rb = GetComponent<Rigidbody2D>();
         _menuManager = FindObjectOfType<MenuManager>();
+        _portalManager = FindObjectOfType<PortalManager>();
     }
 
     private void Update()
@@ -132,9 +134,13 @@ public class PlayerHeadMovement : MonoBehaviour
                 break;
 
 
-            // Portal FAZER VARIAVEL ESTATICA
+            // Portal
             case 9:
-                SceneManager.LoadScene("CENA CAIQUE");
+                if (_portalManager != null)
+                {
+                    SceneManager.LoadScene(_portalManager.nextStage);
+                    //CompleteStage(_stageManager.currentStageNumber);
+                }
                 break;
 
             // SelecionarFases
@@ -339,6 +345,21 @@ public class PlayerHeadMovement : MonoBehaviour
                 _knotsColliders[i].enabled = true;
                 _knotsColliders[i] = null;
             }
+        }
+    }
+
+    public void CompleteStage(int stageNumber)
+    {
+        Debug.Log("Completou a fase " + stageNumber);
+
+        // Pega o progresso salvo
+        int unlockedStages = PlayerPrefs.GetInt("UnlockedStages", 1);
+
+        // Se a próxima fase não estiver desbloqueada ainda, desbloqueia
+        if (unlockedStages == stageNumber)
+        {
+            PlayerPrefs.SetInt("UnlockedStages", unlockedStages + 1);
+            PlayerPrefs.Save();
         }
     }
     #endregion
