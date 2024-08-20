@@ -245,7 +245,7 @@ public class PlayerHeadMovement : MonoBehaviour
                 if (_menuManager != null)
                 {
                     ButtonSfx();
-                    _menuManager.OpenStage("CENA CAIQUE");
+                    _menuManager.OpenStage("SampleScene");
                 }
                 break;
 
@@ -254,7 +254,7 @@ public class PlayerHeadMovement : MonoBehaviour
                 if (_menuManager != null)
                 {
                     ButtonSfx();
-                    _menuManager.OpenStage("CENA CAIQUE");
+                    _menuManager.OpenStage("TESTEFINAL");
                 }
                 break;
         }
