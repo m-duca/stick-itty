@@ -72,6 +72,8 @@ public class PlayerHeadMovement : MonoBehaviour
 
     private void Update()
     {
+        playerButt.transform.rotation = Quaternion.Euler(0f, 0f, 90f);
+
         UpdateLinePoints();
 
         UpdateLineCollider();
@@ -119,6 +121,7 @@ public class PlayerHeadMovement : MonoBehaviour
             {
                 _colliderStartPoint = 0;
                 SetButtPos(newButtPos);
+                SetButtRotation(collision.gameObject.GetComponent<BaseButtRotation>().NewRotationZ);
                 playerParent.transform.parent = collision.transform;
                 _changedPos = true;
 
@@ -366,6 +369,8 @@ public class PlayerHeadMovement : MonoBehaviour
         playerButt.transform.position = basePos;
         ResetStretch();
     }
+
+    private void SetButtRotation(float z) => playerButt.transform.rotation = Quaternion.Euler(0f, 0f, z);
 
     private void ResetChangedPos() => _changedPos = false;
 
