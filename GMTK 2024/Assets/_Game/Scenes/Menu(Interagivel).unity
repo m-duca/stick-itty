@@ -315,6 +315,10 @@ MonoBehaviour:
   - {fileID: 930267080}
   - {fileID: 1147005784}
   - {fileID: 548360438}
+  stage2ButtonContainer: {fileID: 1322759677}
+  stage3ButtonContainer: {fileID: 557367018}
+  stage4ButtonContainer: {fileID: 1259866436}
+  stage5ButtonContainer: {fileID: 1998060634}
 --- !u!4 &240337731
 Transform:
   m_ObjectHideFlags: 0
@@ -472,7 +476,7 @@ GameObject:
   - component: {fileID: 331145003}
   - component: {fileID: 331145002}
   m_Layer: 18
-  m_Name: Stage2ButtonContainer
+  m_Name: Stage1ButtonContainer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -866,7 +870,7 @@ GameObject:
   - component: {fileID: 557367020}
   - component: {fileID: 557367019}
   m_Layer: 20
-  m_Name: Stage5ButtonContainer
+  m_Name: Stage3ButtonContainer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1922,7 +1926,7 @@ GameObject:
   - component: {fileID: 1259866438}
   - component: {fileID: 1259866437}
   m_Layer: 21
-  m_Name: Stage3ButtonContainer
+  m_Name: Stage4ButtonContainer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2182,7 +2186,7 @@ GameObject:
   - component: {fileID: 1322759679}
   - component: {fileID: 1322759678}
   m_Layer: 19
-  m_Name: Stage4ButtonContainer
+  m_Name: Stage2ButtonContainer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3104,7 +3108,7 @@ GameObject:
   - component: {fileID: 1998060636}
   - component: {fileID: 1998060635}
   m_Layer: 22
-  m_Name: Stage1ButtonContainer
+  m_Name: Stage5ButtonContainer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3845,10 +3849,10 @@ SceneRoots:
   - {fileID: 730162320}
   - {fileID: 1519189610}
   - {fileID: 1842428932}
-  - {fileID: 1998060637}
   - {fileID: 331145004}
-  - {fileID: 1259866439}
   - {fileID: 1322759680}
   - {fileID: 557367021}
+  - {fileID: 1259866439}
+  - {fileID: 1998060637}
   - {fileID: 1220355055}
   - {fileID: 1078432968}

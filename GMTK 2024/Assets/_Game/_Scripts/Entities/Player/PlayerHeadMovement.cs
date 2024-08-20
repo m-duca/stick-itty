@@ -27,6 +27,7 @@ public class PlayerHeadMovement : MonoBehaviour
     private ValveScript _valveScript;
     private MenuManager _menuManager;
     private PortalManager _portalManager;
+    private StageManager _stageManager;
 
     // Inputs:
     private Vector2 _moveInput;
@@ -57,6 +58,7 @@ public class PlayerHeadMovement : MonoBehaviour
         _rb = GetComponent<Rigidbody2D>();
         _menuManager = FindObjectOfType<MenuManager>();
         _portalManager = FindObjectOfType<PortalManager>();
+        _stageManager = FindObjectOfType<StageManager>();
     }
 
     private void Update()
@@ -139,7 +141,7 @@ public class PlayerHeadMovement : MonoBehaviour
                 if (_portalManager != null)
                 {
                     SceneManager.LoadScene(_portalManager.nextStage);
-                    //CompleteStage(_stageManager.currentStageNumber);
+                    CompleteStage(_stageManager.currentStageNumber);
                 }
                 break;
 
@@ -174,7 +176,7 @@ public class PlayerHeadMovement : MonoBehaviour
             case 18:
                 if (_menuManager != null)
                 {
-                    _menuManager.OpenStage("CENA CAIQUE");
+                    _menuManager.OpenStage("FINALZINHO");
                 }
                 break;
 
@@ -190,7 +192,7 @@ public class PlayerHeadMovement : MonoBehaviour
             case 20:
                 if (_menuManager != null)
                 {
-                    _menuManager.OpenStage("CENA CAIQUE");
+                    _menuManager.OpenStage("Testes Duca");
                 }
                 break;
 
