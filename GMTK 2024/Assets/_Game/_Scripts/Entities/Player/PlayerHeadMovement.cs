@@ -238,7 +238,7 @@ public class PlayerHeadMovement : MonoBehaviour
                 }
                 break;
 
-            // Fase4
+            /*// Fase4
             case 21:
                 if (_menuManager != null)
                 {
@@ -254,7 +254,7 @@ public class PlayerHeadMovement : MonoBehaviour
                     ButtonSfx();
                     _menuManager.OpenStage("TESTEFINAL");
                 }
-                break;
+                break;*/
         }
     }
     #endregion

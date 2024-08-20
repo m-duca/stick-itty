@@ -10,12 +10,12 @@ public class MenuManager : MonoBehaviour
     [SerializeField] public List<GameObject> stageSelectionElements;
     [SerializeField] public BoxCollider2D stage2ButtonContainer;
     [SerializeField] public BoxCollider2D stage3ButtonContainer;
-    [SerializeField] public BoxCollider2D stage4ButtonContainer;
-    [SerializeField] public BoxCollider2D stage5ButtonContainer;
+    //[SerializeField] public BoxCollider2D stage4ButtonContainer;
+    //[SerializeField] public BoxCollider2D stage5ButtonContainer;
     [SerializeField] public GameObject stage2ButtonChains;
     [SerializeField] public GameObject stage3ButtonChains;
-    [SerializeField] public GameObject stage4ButtonChains;
-    [SerializeField] public GameObject stage5ButtonChains;
+    //[SerializeField] public GameObject stage4ButtonChains;
+    //[SerializeField] public GameObject stage5ButtonChains;
 
     public void OpenStageSelection()
     {
@@ -78,10 +78,10 @@ public class MenuManager : MonoBehaviour
         stage2ButtonChains.SetActive(true);
         stage3ButtonContainer.enabled = false;
         stage3ButtonChains.SetActive(true);
-        stage4ButtonContainer.enabled = false;
-        stage4ButtonChains.SetActive(true);
-        stage5ButtonContainer.enabled = false;
-        stage5ButtonChains.SetActive(true);
+        //stage4ButtonContainer.enabled = false;
+        //stage4ButtonChains.SetActive(true);
+        //stage5ButtonContainer.enabled = false;
+        //stage5ButtonChains.SetActive(true);
 
         if (unlockedStages >= 2) 
         {
@@ -93,7 +93,7 @@ public class MenuManager : MonoBehaviour
             stage3ButtonContainer.enabled = true;
             stage3ButtonChains.SetActive(false);
         }
-        if (unlockedStages >= 4)
+        /*if (unlockedStages >= 4)
         {
             stage4ButtonContainer.enabled = true;
             stage4ButtonChains.SetActive(false);
@@ -102,6 +102,6 @@ public class MenuManager : MonoBehaviour
         {
             stage5ButtonContainer.enabled = true;
             stage5ButtonChains.SetActive(false);
-        }
+        }*/
     }
 }
