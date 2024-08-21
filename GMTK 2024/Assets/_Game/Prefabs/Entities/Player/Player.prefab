@@ -33,6 +33,7 @@ Transform:
   m_Children:
   - {fileID: 547047542517493438}
   - {fileID: 8485062005572942078}
+  - {fileID: 75152572388653913}
   m_Father: {fileID: 1098968071677291953}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4338945061527746714
@@ -309,6 +310,7 @@ MonoBehaviour:
   maxDistance: 10
   resetCanMoveInterval: 0.25
   screenShakeScript: {fileID: 902263860448472016}
+  startLinePoint: {fileID: 75152572388653913}
   playerButt: {fileID: 680404588759745739}
   playerMiddlePrefab: {fileID: 6538976962977459439, guid: 2ccd2fea73d99054eb2ea9084ed604b3, type: 3}
   line: {fileID: 6727241855786752655}
@@ -533,6 +535,37 @@ MonoBehaviour:
     mipBias: 0
     varianceClampScale: 0.9
     contrastAdaptiveSharpening: 0
+--- !u!1 &5197458427920605909
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 75152572388653913}
+  m_Layer: 0
+  m_Name: Start Line Point
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &75152572388653913
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5197458427920605909}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.77, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6184158290558552989}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5708147250760560385
 GameObject:
   m_ObjectHideFlags: 0
@@ -544,7 +577,7 @@ GameObject:
   - component: {fileID: 547047542517493438}
   - component: {fileID: 1949778167783876654}
   m_Layer: 0
-  m_Name: player cabeca
+  m_Name: Head GFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -705,8 +738,8 @@ LineRenderer:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: 0
-        value: 0.30000305
+        time: 0.0038452148
+        value: 0.19091034
         inSlope: -1.69582
         outSlope: -1.69582
         tangentMode: 0
@@ -714,8 +747,8 @@ LineRenderer:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.4846154
-        value: 0.47272727
+        time: 0.50384146
+        value: 0.54545593
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -786,7 +819,7 @@ GameObject:
   - component: {fileID: 8485062005572942078}
   - component: {fileID: 1982149705777726159}
   m_Layer: 0
-  m_Name: player corpo
+  m_Name: Body GFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

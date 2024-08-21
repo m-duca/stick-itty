@@ -16,6 +16,7 @@ public class PlayerHeadMovement : MonoBehaviour
 
     [Header("Referências:")]
     [SerializeField] private ScreenShake screenShakeScript;
+    [SerializeField] private Transform startLinePoint;
     [SerializeField] private GameObject playerButt;
     [SerializeField] private GameObject playerMiddlePrefab;
     [SerializeField] private LineRenderer line;
@@ -288,9 +289,9 @@ public class PlayerHeadMovement : MonoBehaviour
         {
             if (i == 0)
             {
-                var buttPos = playerButt.transform.position;
-                line.SetPosition(i, new Vector3(buttPos.x, buttPos.y, 0f));
-                _linePoints[i] = buttPos;
+                var startPos = startLinePoint.transform.position;
+                line.SetPosition(i, new Vector3(startPos.x, startPos.y, 0f));
+                _linePoints[i] = startPos;
             }
             else if (i > _lastTargetDistance)
             {
@@ -306,7 +307,7 @@ public class PlayerHeadMovement : MonoBehaviour
         for (int i = 0; i < _linePoints.Length; i++)
         {
             if (i != 0 && i != _linePoints.Length - 1)
-                _linePoints[i] = playerButt.transform.position;
+                _linePoints[i] = startLinePoint.transform.position;
         }
 
         _lastTargetDistance = 0;
