@@ -192,7 +192,7 @@ SpriteRenderer:
   m_SortingLayerID: -1046114835
   m_SortingLayer: 3
   m_SortingOrder: 10
-  m_Sprite: {fileID: 21300000, guid: 17fc034806116f540a0222ce67d7fae0, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a300a070943aee54297db31dd6313527, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -327,7 +327,7 @@ MonoBehaviour:
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 1
   m_ApplyToSortingLayers: 00000000c96ee445f74fded6ed8da5c1ebf8c553bfe62809679d4b76
-  m_LightCookieSprite: {fileID: 21300000, guid: 17fc034806116f540a0222ce67d7fae0, type: 3}
+  m_LightCookieSprite: {fileID: 21300000, guid: a300a070943aee54297db31dd6313527, type: 3}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
   m_AlphaBlendOnOverlap: 0
