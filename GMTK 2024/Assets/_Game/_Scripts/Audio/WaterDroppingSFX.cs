@@ -11,7 +11,7 @@ public class WaterDroppingSFX : MonoBehaviour
     #region Funções Próprias
     private IEnumerator PlaySFX() 
     {
-        AudioManager.Instance.PlaySFX("water dropping");
+        AudioManager.Instance.PlaySFX("water dripping");
         yield return new WaitForSeconds(22.5f);
         StartCoroutine(PlaySFX());
     }

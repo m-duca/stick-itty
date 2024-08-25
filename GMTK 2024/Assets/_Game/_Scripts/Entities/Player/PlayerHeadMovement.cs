@@ -382,7 +382,6 @@ public class PlayerHeadMovement : MonoBehaviour
 
     private void StoreKnotCollider(BoxCollider2D collider) 
     {
-        Debug.Log("bola 1");
         for (int i = 0; i < _knotsColliders.Length; i++) 
         {
             if (_knotsColliders[i] == null) 
@@ -395,7 +394,6 @@ public class PlayerHeadMovement : MonoBehaviour
 
     private void ClearKnotsColliders()
     {
-        Debug.Log("bola 2");
         for (int i = 0; i < _knotsColliders.Length; i++)
         {
             if (_knotsColliders[i] != null)
