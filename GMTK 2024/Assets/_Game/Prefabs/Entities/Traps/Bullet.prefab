@@ -213,7 +213,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 12
-  lifeTime: 10
+  lifeTime: 15
   MoveDir: {x: 0, y: 0}
 --- !u!114 &-4195236873827057827
 MonoBehaviour:
