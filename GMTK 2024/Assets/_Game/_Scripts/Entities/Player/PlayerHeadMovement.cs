@@ -125,6 +125,8 @@ public class PlayerHeadMovement : MonoBehaviour
 
                 _headSpawnPosDir = collision.gameObject.GetComponent<BaseHeadPos>().OffsetDir;
 
+                ResetStretch();
+
                 if (AudioManager.Instance != null)
                 {
                     AudioManager.Instance.PlaySFX("frog " + _frogSfxIndex);
