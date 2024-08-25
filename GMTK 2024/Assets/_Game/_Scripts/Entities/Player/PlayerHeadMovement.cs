@@ -16,13 +16,15 @@ public class PlayerHeadMovement : MonoBehaviour
     [SerializeField] private float resetCanMoveInterval;
 
     [Header("Referências:")]
-    [SerializeField] private ScreenShake screenShakeScript;
     [SerializeField] private Transform startLinePoint;
     [SerializeField] private GameObject playerButt;
     [SerializeField] private GameObject playerMiddlePrefab;
     [SerializeField] private LineRenderer line;
     [SerializeField] private Transform playerParent;
     [SerializeField] private EdgeCollider2D lineCollider;
+
+    // Referências:
+    private ScreenShake _screenShakeScript;
 
     // Componentes:
     private Rigidbody2D _rb;
@@ -64,6 +66,8 @@ public class PlayerHeadMovement : MonoBehaviour
         _knotsColliders = new BoxCollider2D[line.positionCount - 2];
 
         ResetLineMiddlePoints();
+
+        _screenShakeScript = FindObjectOfType<ScreenShake>();
 
         _rb = GetComponent<Rigidbody2D>();
         _menuManager = FindObjectOfType<MenuManager>();
@@ -323,7 +327,7 @@ public class PlayerHeadMovement : MonoBehaviour
 
     public void ResetStretch()
     {
-        screenShakeScript.ApplyScreenShake();
+        _screenShakeScript.ApplyScreenShake();
 
         _rb.velocity = Vector2.zero;
         gameObject.transform.position = playerButt.transform.position + (Vector3)_headSpawnPosDir * 1f;

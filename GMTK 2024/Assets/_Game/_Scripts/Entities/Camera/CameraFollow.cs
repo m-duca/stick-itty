@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class CameraFollow : MonoBehaviour
 {
-    [SerializeField] private bool isMecha = false;
     [SerializeField] private bool canFollow = true;
 
     [SerializeField] private Vector3 offset;
