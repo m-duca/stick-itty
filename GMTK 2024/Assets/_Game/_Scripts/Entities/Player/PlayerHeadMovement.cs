@@ -1,9 +1,11 @@
+using EasyTransition;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.NetworkInformation;
 using System.Runtime.CompilerServices;
+using UnityEditor.SceneManagement;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -14,6 +16,10 @@ public class PlayerHeadMovement : MonoBehaviour
     [SerializeField] private float moveForce;
     [SerializeField] private float maxDistance;
     [SerializeField] private float resetCanMoveInterval;
+
+        [Header("Transição:")]
+    [SerializeField] private TransitionSettings transitionSettings;
+    [SerializeField] private float loadTime;
 
     [Header("Referências:")]
     [SerializeField] private Transform startLinePoint;
@@ -188,7 +194,7 @@ public class PlayerHeadMovement : MonoBehaviour
             case 9:
                 if (_portalManager != null)
                 {
-                    SceneManager.LoadScene(_portalManager.nextStage);
+                    TransitionManager.Instance().Transition(_portalManager.nextStage, transitionSettings, loadTime);
                     CompleteStage(_stageManager.currentStageNumber);
                 }
                 break;

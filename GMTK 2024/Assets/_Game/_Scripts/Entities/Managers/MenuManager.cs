@@ -1,3 +1,4 @@
+using EasyTransition;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,15 +6,19 @@ using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour
 {
+    [Header("Transição:")]
+    [SerializeField] private TransitionSettings transitionSettings;
+    [SerializeField] private float loadTime;
+
     [Header("Referências:")]
-    [SerializeField] public List<GameObject> mainMenuElements;
-    [SerializeField] public List<GameObject> stageSelectionElements;
-    [SerializeField] public BoxCollider2D stage2ButtonContainer;
-    [SerializeField] public BoxCollider2D stage3ButtonContainer;
+    public List<GameObject> mainMenuElements;
+    public List<GameObject> stageSelectionElements;
+    public BoxCollider2D stage2ButtonContainer;
+    public BoxCollider2D stage3ButtonContainer;
     //[SerializeField] public BoxCollider2D stage4ButtonContainer;
     //[SerializeField] public BoxCollider2D stage5ButtonContainer;
-    [SerializeField] public GameObject stage2ButtonChains;
-    [SerializeField] public GameObject stage3ButtonChains;
+    public GameObject stage2ButtonChains;
+    public GameObject stage3ButtonChains;
     //[SerializeField] public GameObject stage4ButtonChains;
     //[SerializeField] public GameObject stage5ButtonChains;
 
@@ -68,7 +73,7 @@ public class MenuManager : MonoBehaviour
     public void OpenStage(string stage)
     {
         Debug.Log("Fase " +  stage + " Aberta");
-        SceneManager.LoadScene(stage);
+        TransitionManager.Instance().Transition(stage, transitionSettings, loadTime);
     }
 
     public void CheckUnlockedStages()

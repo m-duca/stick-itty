@@ -308,7 +308,8 @@ MonoBehaviour:
   moveForce: 0.4
   maxDistance: 14
   resetCanMoveInterval: 0.25
-  screenShakeScript: {fileID: 0}
+  transitionSettings: {fileID: 11400000, guid: 9710edcf009d00943af961dd2a7ca7d3, type: 2}
+  loadTime: 0
   startLinePoint: {fileID: 75152572388653913}
   playerButt: {fileID: 680404588759745739}
   playerMiddlePrefab: {fileID: 6538976962977459439, guid: 2ccd2fea73d99054eb2ea9084ed604b3, type: 3}
