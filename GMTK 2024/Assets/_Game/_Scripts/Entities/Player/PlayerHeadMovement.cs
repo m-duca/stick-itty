@@ -186,7 +186,12 @@ public class PlayerHeadMovement : MonoBehaviour
             // Valvula
             case 8:
                 _valveScript = collision.gameObject.GetComponent<ValveScript>();
+
                 OpenGate();
+
+                // SFX
+                if (AudioManager.Instance != null)
+                    AudioManager.Instance.PlaySFX("valve " + Random.Range(1, 3));
                 break;
 
 
