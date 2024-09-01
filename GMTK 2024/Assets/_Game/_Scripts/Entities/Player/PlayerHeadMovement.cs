@@ -366,8 +366,11 @@ public class PlayerHeadMovement : MonoBehaviour
         lineCollider.points = points;
     }
 
-    private void OpenGate() => _valveScript.connectedGate.SetActive(false);
-    
+    private void OpenGate() { 
+        _valveScript.connectedGate.SetActive(false);
+        _valveScript.activateGate.SetActive(true);
+    }
+
     private void SetNewDistance(GameObject knot) 
     {
         _lastTargetDistance++;
