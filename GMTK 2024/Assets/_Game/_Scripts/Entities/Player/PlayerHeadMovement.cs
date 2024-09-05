@@ -368,6 +368,8 @@ public class PlayerHeadMovement : MonoBehaviour
     private void OpenGate() { 
         _valveScript.connectedGate.SetActive(false);
         _valveScript.activateGate.SetActive(true);
+
+        _valveScript.spriteRenderer.sprite = _valveScript.openedGateSprite;
     }
 
     private void SetNewDistance(GameObject knot) 

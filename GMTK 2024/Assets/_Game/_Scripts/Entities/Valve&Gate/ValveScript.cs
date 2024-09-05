@@ -8,5 +8,7 @@ public class ValveScript : MonoBehaviour
     [Header("Referências:")]
     [SerializeField] public GameObject connectedGate;
     [SerializeField] public GameObject activateGate;
+    [SerializeField] public SpriteRenderer spriteRenderer;
+    [SerializeField] public Sprite openedGateSprite;
     #endregion
 }

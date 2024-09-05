@@ -1308,6 +1308,88 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b77c2363d0e26ea489c1380be33fb6ba, type: 3}
+--- !u!1 &248485153
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 248485155}
+  - component: {fileID: 248485154}
+  m_Layer: 0
+  m_Name: Global Light 2D
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &248485154
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 248485153}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ComponentVersion: 1
+  m_LightType: 4
+  m_BlendStyleIndex: 0
+  m_FalloffIntensity: 0.5
+  m_Color: {r: 0.078631185, g: 0.1792453, b: 0.09470957, a: 1}
+  m_Intensity: 0.95
+  m_LightVolumeIntensity: 1
+  m_LightVolumeIntensityEnabled: 0
+  m_ApplyToSortingLayers: 00000000c96ee445f74fded6ed8da5c1ebf8c553bfe62809679d4b76
+  m_LightCookieSprite: {fileID: 0}
+  m_DeprecatedPointLightCookieSprite: {fileID: 0}
+  m_LightOrder: 0
+  m_AlphaBlendOnOverlap: 0
+  m_OverlapOperation: 0
+  m_NormalMapDistance: 3
+  m_NormalMapQuality: 2
+  m_UseNormalMap: 0
+  m_ShadowIntensityEnabled: 0
+  m_ShadowIntensity: 0.75
+  m_ShadowVolumeIntensityEnabled: 0
+  m_ShadowVolumeIntensity: 0.75
+  m_LocalBounds:
+    m_Center: {x: 0, y: -0.00000011920929, z: 0}
+    m_Extent: {x: 0.9985302, y: 0.99853027, z: 0}
+  m_PointLightInnerAngle: 360
+  m_PointLightOuterAngle: 360
+  m_PointLightInnerRadius: 0
+  m_PointLightOuterRadius: 1
+  m_ShapeLightParametricSides: 5
+  m_ShapeLightParametricAngleOffset: 0
+  m_ShapeLightParametricRadius: 1
+  m_ShapeLightFalloffSize: 0.5
+  m_ShapeLightFalloffOffset: {x: 0, y: 0}
+  m_ShapePath:
+  - {x: -0.5, y: -0.5, z: 0}
+  - {x: 0.5, y: -0.5, z: 0}
+  - {x: 0.5, y: 0.5, z: 0}
+  - {x: -0.5, y: 0.5, z: 0}
+--- !u!4 &248485155
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 248485153}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: 0.7071064, w: 0.7071072}
+  m_LocalPosition: {x: -45.58, y: 2.999, z: 0}
+  m_LocalScale: {x: 0.95000005, y: 0.95000005, z: 0.95000005}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &278383511
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2768,6 +2850,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 62c38e321f1d8484e8291a55b2c200b4, type: 3}
+--- !u!212 &509143225 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 399763214968101350, guid: 62c38e321f1d8484e8291a55b2c200b4, type: 3}
+  m_PrefabInstance: {fileID: 509143224}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &527615355
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2860,6 +2947,14 @@ PrefabInstance:
       propertyPath: connectedGate
       value: 
       objectReference: {fileID: 33483478}
+    - target: {fileID: 8704770816821119094, guid: 45a0314f7fa15c5448dd03d8064c9187, type: 3}
+      propertyPath: spriteRenderer
+      value: 
+      objectReference: {fileID: 3090056354968853311}
+    - target: {fileID: 8704770816821119094, guid: 45a0314f7fa15c5448dd03d8064c9187, type: 3}
+      propertyPath: openedGateSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c176cd40c5a12114a9618f455d144669, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -64346,6 +64441,14 @@ PrefabInstance:
       propertyPath: connectedGate
       value: 
       objectReference: {fileID: 1190766462}
+    - target: {fileID: 8704770816821119094, guid: 45a0314f7fa15c5448dd03d8064c9187, type: 3}
+      propertyPath: spriteRenderer
+      value: 
+      objectReference: {fileID: 509143225}
+    - target: {fileID: 8704770816821119094, guid: 45a0314f7fa15c5448dd03d8064c9187, type: 3}
+      propertyPath: openedGateSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c176cd40c5a12114a9618f455d144669, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -64767,6 +64870,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 62c38e321f1d8484e8291a55b2c200b4, type: 3}
+--- !u!212 &3090056354968853311 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 399763214968101350, guid: 62c38e321f1d8484e8291a55b2c200b4, type: 3}
+  m_PrefabInstance: {fileID: 3090056354968853310}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6168246666572884115
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -64832,6 +64940,7 @@ PrefabInstance:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 248485155}
   - {fileID: 955212494}
   - {fileID: 632548086}
   - {fileID: 1114641777}
