@@ -59905,6 +59905,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2032889609465922073, guid: 7507f235df9b2f541b15801142900167, type: 3}
+      propertyPath: orthographic size
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 2555104407159913443, guid: 7507f235df9b2f541b15801142900167, type: 3}
       propertyPath: m_Name
       value: Camera Follow
