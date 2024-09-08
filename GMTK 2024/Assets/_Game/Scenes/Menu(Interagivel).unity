@@ -734,8 +734,12 @@ MonoBehaviour:
   - {fileID: 557367018}
   stage2ButtonContainer: {fileID: 1322759678}
   stage3ButtonContainer: {fileID: 557367019}
+  stage4ButtonContainer: {fileID: 1259866437}
+  stage5ButtonContainer: {fileID: 1998060635}
   stage2ButtonChains: {fileID: 1871403447}
   stage3ButtonChains: {fileID: 322649856}
+  stage4ButtonChains: {fileID: 781901585}
+  stage5ButtonChains: {fileID: 1612860297}
 --- !u!4 &240337731
 Transform:
   m_ObjectHideFlags: 0

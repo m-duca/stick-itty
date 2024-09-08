@@ -58932,7 +58932,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2351524773634011607, guid: 7108dba628c56cc4692e4977fca7482c, type: 3}
       propertyPath: currentStageNumber
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3588448166830179822, guid: 7108dba628c56cc4692e4977fca7482c, type: 3}
       propertyPath: m_LocalPosition.x
