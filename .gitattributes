@@ -1,5 +1,11 @@
-# Forçar o GitHub Linguist a reconhecer o projeto como C#
 *.cs linguist-language=C#
+
+*.shader linguist-detectable=false
+*.hlsl linguist-detectable=false
+*.cginc linguist-detectable=false
+*.shadergraph linguist-detectable=false
+*.shadersubgraph linguist-detectable=false
+
 *.meta linguist-detectable=false
 *.asset linguist-detectable=false
 *.unity linguist-detectable=false
